@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)https://web.fe.up.pt/~arestivo/page/courses/2016/ltw/project/ -->
+<html><script>(function main() {
+    // Create enabled event
+    function fireEnabledEvent() {
+        // If gli exists, then we are already present and shouldn't do anything
+        if (!window.gli) {
+            setTimeout(function () {
+                var enabledEvent = document.createEvent("Event");
+                enabledEvent.initEvent("WebGLEnabledEvent", true, true);
+                document.dispatchEvent(enabledEvent);
+            }, 0);
+        } else {
+            //console.log("WebGL Inspector already embedded on the page - disabling extension");
+        }
+    };
+
+    // Grab the path root from the extension
+    document.addEventListener("WebGLInspectorReadyEvent", function (e) {
+        var pathElement = document.getElementById("__webglpathroot");
+        if (window["gliloader"]) {
+            gliloader.pathRoot = pathElement.innerText;
+        } else {
+            // TODO: more?
+            window.gliCssUrl = pathElement.innerText + "gli.all.css";
+        }
+    }, false);
+
+    // Rewrite getContext to snoop for webgl
+    var originalGetContext = HTMLCanvasElement.prototype.getContext;
+    if (!HTMLCanvasElement.prototype.getContextRaw) {
+        HTMLCanvasElement.prototype.getContextRaw = originalGetContext;
+    }
+    HTMLCanvasElement.prototype.getContext = function () {
+        var ignoreCanvas = this.internalInspectorSurface;
+        if (ignoreCanvas) {
+            return originalGetContext.apply(this, arguments);
+        }
+
+        var result = originalGetContext.apply(this, arguments);
+        if (result == null) {
+            return null;
+        }
+
+        var contextNames = ["moz-webgl", "webkit-3d", "experimental-webgl", "webgl", "3d"];
+        var requestingWebGL = contextNames.indexOf(arguments[0]) != -1;
+        if (requestingWebGL) {
+            // Page is requesting a WebGL context!
+            fireEnabledEvent(this);
+
+            // If we are injected, inspect this context
+            if (window.gli) {
+                if (gli.host.inspectContext) {
+                    // TODO: pull options from extension
+                    result = gli.host.inspectContext(this, result);
+                    // NOTE: execute in a timeout so that if the dom is not yet
+                    // loaded this won't error out.
+                    window.setTimeout(function() {
+                        var hostUI = new gli.host.HostUI(result);
+                        result.hostUI = hostUI; // just so we can access it later for debugging
+                    }, 0);
+                }
+            }
+        }
+
+        return result;
+    };
+})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>André Restivo @ FEUP :: Web Languages and Technologies</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/ico" href="https://www.fe.up.pt/~arestivo/page/img/favicon.ico">
+    <link rel="stylesheet" href="./Especificação do Projeto_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./Especificação do Projeto_files/magula.min.css">
+    <script src="./Especificação do Projeto_files/highlight.min.js.transferir"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./Especificação do Projeto_files/fonts.css">
+    <link rel="stylesheet" href="./Especificação do Projeto_files/style.css">
+    <script src="./Especificação do Projeto_files/jquery-3.1.1.min.js.transferir"></script>
+    <script src="./Especificação do Projeto_files/MathJax.js.transferir"></script>
+    <script src="./Especificação do Projeto_files/clipboard.min.js.transferir"></script>
+    <script src="./Especificação do Projeto_files/behaviour.js.transferir"></script>
+  <style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style></head>
+  <body><div id="MathJax_Message" style="display: none;"></div>
+  <header>
+    <h1><a href="https://www.fe.up.pt/~arestivo/page/">Web Languages and Technologies</a></h1>
+    <h2><a href="https://www.fe.up.pt/~arestivo/page/">LTW :: 2016/17 Project</a></h2>
+  </header>
+
+
+
+
+
+<ol class="breadcrumbs">
+  <li><a href="https://www.fe.up.pt/~arestivo/page/">home</a></li>
+  
+    
+      
+      <li><a href="https://www.fe.up.pt/~arestivo/page/courses">courses</a></li>
+      
+      
+  
+    
+      
+      <li><a href="https://www.fe.up.pt/~arestivo/page/courses/2016">2016</a></li>
+      
+      
+  
+    
+      
+      <li><a href="https://www.fe.up.pt/~arestivo/page/courses/2016/ltw">ltw</a></li>
+      
+      
+  
+    
+      
+      <li><a href="https://www.fe.up.pt/~arestivo/page/courses/2016/ltw/project">project</a></li>
+      
+      
+  
+    
+      
+  
+</ol>
+
+<ul class="tags">
+  
+    <li><a href="https://www.fe.up.pt/~arestivo/page/tags/ltw">#ltw</a> </li>
+  
+    <li><a href="https://www.fe.up.pt/~arestivo/page/tags/web">#web</a> </li>
+  
+    <li><a href="https://www.fe.up.pt/~arestivo/page/tags/project">#project</a> </li>
+  
+</ul>
+
+<article id="content">
+           
+
+<h3 id="ltw-project">LTW Project</h3>
+
+<p>Project description for the <a href="https://web.fe.up.pt/~arestivo/page/courses/2016/ltw/">2016</a> edition of the <a href="https://web.fe.up.pt/~arestivo/page/courses/2016/ltw/">Web Languages and Technologies</a> course.</p>
+
+<h3 id="objective">Objective</h3>
+
+<p>Create a web application where users can share and review restaurants. To create this application, students should:</p>
+
+<ul>
+<li>Create a <strong>sqlite</strong> database where data about users and events is stored.</li>
+<li>Create documents using <strong>HTML</strong> and <strong>CSS</strong> that represent the web pages of the application.</li>
+<li>Use <strong>PHP</strong> to generate those web pages after retrieving/changing data from the database.</li>
+<li>Use <strong>Javascript</strong> or <strong>jQuery</strong> to enhance the user experience (for example using Ajax).</li>
+</ul>
+
+<h3 id="work-groups">Work groups</h3>
+
+<ul>
+<li>This project will be completed by students in groups of three (except in cases where the number of students is not a multiple of three).</li>
+<li>Students should contact their practical class teachers, either in class or by mail, to establish these work groups.</li>
+<li>The list of groups will be published shortly.</li>
+</ul>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>The <strong>minimum</strong> expected requirements are the following:</p>
+
+<ul>
+<li>There should be two types of users: owners and reviewers.</li>
+<li>All users should be able to:
+
+<ul>
+<li>Register a new account.</li>
+<li>Login and logout.</li>
+<li>Edit their profile.</li>
+</ul></li>
+<li>Owners should be able to:
+
+<ul>
+<li>Add new restaurants to the database (name, description, photo, …).</li>
+<li>Manage their own restaurants.</li>
+<li>Reply to reviews.</li>
+</ul></li>
+<li>Reviewers should be able to:
+
+<ul>
+<li>Search for restaurants.</li>
+<li>Leave a review (score + optional comment).</li>
+</ul></li>
+</ul>
+
+<p>Students should also make sure that:</p>
+
+<ul>
+<li>The following technologies are all used: <strong>HTML</strong>, <strong>CSS</strong>, PHP, <strong>Javascript</strong> (by means of <strong>jQuery</strong>), <strong>Ajax</strong>/<strong>JSON</strong>, <strong>PDO</strong>/<strong>SQL</strong> (using <strong>sqlite</strong>).</li>
+<li>The web site should be as <strong>secure</strong> as possible.</li>
+<li>Code should be <strong>organized</strong> and <strong>consistent</strong>.</li>
+<li>Frameworks are not allowed.</li>
+<li>Small helper libraries (e.g. displaying a gallery of pictures) are allowed.</li>
+</ul>
+
+<p>Some suggested <strong>extra</strong> requirements:</p>
+
+<ul>
+<li>Ability for users to add their own photos to restaurants.</li>
+<li>Integration with google maps.</li>
+<li>Extra information about restaurants (price, category, open hours, …).</li>
+<li>Advanced search capabilities.</li>
+</ul>
+
+<h3 id="delivery">Delivery</h3>
+
+<ul>
+<li><strong>Date</strong>: Until the <strong>TBD</strong>.</li>
+<li><strong>Upload</strong>: <a href="https://moodle.up.pt/">https://moodle.up.pt/</a></li>
+<li><strong>Presentation</strong>: On the week of 12th to 16th of December.</li>
+</ul>
+
+</article>
+
+
+  <script>
+      MathJax.Hub.Config({
+          tex2jax: {
+	      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          skipTags: ['h1', 'script', 'noscript', 'style', 'textarea', 'pre']
+          }
+
+      });
+      MathJax.Hub.Queue(function() {
+          $(MathJax.Hub.getAllJax()).map(function(index, elem) {
+              return(elem.SourceElement());
+          }).parent().addClass('has-jax');
+      });
+
+      MathJax.Hub.Configured();
+  </script>
+
+
+  <footer> Copyright © André Restivo</footer>
+  
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-108721-9', 'auto');
+ga('send', 'pageview');
+</script>
+<script async="" src="./Especificação do Projeto_files/analytics.js.transferir"></script>
+
+
+</body></html>

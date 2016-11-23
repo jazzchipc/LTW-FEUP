@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Abel';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Abel-regular/Abel-regular.eot');
+  src: url('../fonts/Abel-regular/Abel-regular.eot?#iefix') format('embedded-opentype'),
+       local('Abel'),
+       local('Abel-regular'),
+       url('../fonts/Abel-regular/Abel-regular.woff2') format('woff2'),
+       url('../fonts/Abel-regular/Abel-regular.woff') format('woff'),
+       url('../fonts/Abel-regular/Abel-regular.ttf') format('truetype'),
+       url('../fonts/Abel-regular/Abel-regular.svg#Abel') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot');
+  src: url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Regular'),
+       local('Roboto-Slab-regular'),
+       url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff2') format('woff2'),
+       url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.woff') format('woff'),
+       url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.ttf') format('truetype'),
+       url('../fonts/Roboto-Slab-regular/Roboto-Slab-regular.svg#RobotoSlab') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/Roboto-Slab-700/Roboto-Slab-700.eot');
+  src: url('../fonts/Roboto-Slab-700/Roboto-Slab-700.eot?#iefix') format('embedded-opentype'),
+       local('Roboto Slab Bold'),
+       local('Roboto-Slab-700'),
+       url('../fonts/Roboto-Slab-700/Roboto-Slab-700.woff2') format('woff2'),
+       url('../fonts/Roboto-Slab-700/Roboto-Slab-700.woff') format('woff'),
+       url('../fonts/Roboto-Slab-700/Roboto-Slab-700.ttf') format('truetype'),
+       url('../fonts/Roboto-Slab-700/Roboto-Slab-700.svg#RobotoSlab') format('svg');
+}
+
