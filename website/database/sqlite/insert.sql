@@ -45,8 +45,8 @@ INSERT INTO Restaurant_Owners VALUES(6, 2);
 
 
 
-INSERT INTO Review VALUES(1, 'Soy', null, null, 10);
-INSERT INTO Review VALUES(2, 'Espanol', null, null, 8);
+INSERT INTO Review VALUES(1, 'Soy', null,  10);
+INSERT INTO Review VALUES(2, 'Espanol', null, 8);
 
 
 INSERT INTO Restaurant_Review VALUES(1, 2, 4);
