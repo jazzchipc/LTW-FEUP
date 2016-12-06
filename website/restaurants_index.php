@@ -5,8 +5,8 @@
 <h1>Restaurant Index</h1>
 
 <?php 
-$dbh = new PDO('sqlite:database/sqlite/db');
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+include('database/connection.php');
 
 try {
     // ONLY prepares
