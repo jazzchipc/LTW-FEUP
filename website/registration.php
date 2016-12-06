@@ -6,7 +6,11 @@ include('templates/html_header.html'); ?>
 
 <form action="database/add_user.php" method="post">
 
+    Username
     <input name="username" type="text" required>
+    Email
+    <input name="email" type="text" required>
+    Password
     <input name="password" type="password" required>
     <input type="submit" value="Register">
 
