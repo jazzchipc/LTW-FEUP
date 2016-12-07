@@ -5,7 +5,7 @@
 PRAGMA foreign_keys = ON;
 
 CREATE TABLE IF NOT EXISTS User(
-    user_id integer,
+    user_id integer AUTO_INCREMENT,
     user_name varchar NOT NULL UNIQUE,
     email varchar NOT NULL,
     password varchar NOT NULL,

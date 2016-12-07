@@ -1,6 +1,6 @@
 <?php
 
-    function createUser($db)
+     include('connection.php');
 
     function getRestaurantsByName($dbh, $name){
         $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name FROM Restaurant WHERE Restaurant.restaurant_name = ?');
@@ -8,14 +8,20 @@
         return $stmt->fetch();
     }
 
-    function getRestaurantsByOwner($dbh, $name){
-        $stmt = $dbh->prepare('SELECT Restaurant_Owners.restaurant_id 
-                                FROM Restaurant_Owners 
-                                WHERE Restaurant_Owners.owner_id = ?');
-        $stmt->execute(array($name));
-        return $stmt->fetch();
+    function getRestaurantsByOwner($dbh, $user_name){
+        $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name
+                               FROM Restaurant
+                               INNER JOIN Restaurant_Owners
+                               ON Restaurant_Owners.restaurant_id = Restaurant.restaurant_id
+                               INNER JOIN Owner
+                               ON Restaurant_Owners.owner_id = Owner.owner_id
+                               INNER JOIN User
+                               ON User.user_id = Owner.owner_id
+                               WHERE User.user_name = ?');
+        $stmt->execute(array($user_name));
+        return $stmt->fetchall();
     }
 
-  
+    var_dump(getRestaurantsByOwner($dbh, 'Catarina'));
 
 ?>

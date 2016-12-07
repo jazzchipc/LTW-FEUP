@@ -40,7 +40,7 @@ INSERT INTO Restaurant_Owners VALUES(1, 2);
 INSERT INTO Restaurant_Owners VALUES(2, 1);
 INSERT INTO Restaurant_Owners VALUES(3, 2);
 INSERT INTO Restaurant_Owners VALUES(4, 1);
-INSERT INTO Restaurant_Owners VALUES(5, 2);
+INSERT INTO Restaurant_Owners VALUES(5, 2); 
 INSERT INTO Restaurant_Owners VALUES(6, 2);
 
 
