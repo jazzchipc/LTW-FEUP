@@ -5,31 +5,27 @@
 PRAGMA foreign_keys = ON;
 
 CREATE TABLE IF NOT EXISTS User(
-    user_id integer,
+    user_id integer PRIMARY KEY,
     user_name varchar NOT NULL UNIQUE,
     email varchar NOT NULL UNIQUE,
-    password varchar NOT NULL,
-    PRIMARY KEY (user_id)
+    password varchar NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS Owner(
-    owner_id integer,
-    PRIMARY KEY (owner_id),
+    owner_id integer PRIMARY KEY,
     FOREIGN KEY (owner_id) REFERENCES User(user_id)
 );
 
 CREATE TABLE IF NOT EXISTS Reviewer(
-    reviewer_id integer,
-    PRIMARY KEY(reviewer_id),
+    reviewer_id integer PRIMARY KEY,
     FOREIGN KEY(reviewer_id) REFERENCES User(user_id)
 );
 
 CREATE TABLE IF NOT EXISTS Restaurant(
-    restaurant_id integer,
+    restaurant_id integer PRIMARY KEY,
     restaurant_name varchar NOT NULL,
     description varchar,
-    photo_url varchar,
-    PRIMARY KEY(restaurant_id)
+    photo_url varchar
 );
 
 CREATE TABLE IF NOT EXISTS Restaurant_Owners(
@@ -41,11 +37,10 @@ CREATE TABLE IF NOT EXISTS Restaurant_Owners(
 );
 
 CREATE TABLE IF NOT EXISTS Review(
-    review_id integer,
+    review_id integer PRIMARY KEY,
     title varchar,
     comment varchar,
     score integer NOT NULL,
-    PRIMARY KEY (review_id),
     CHECK (score > 0 AND score <= 10)
 );
 
