@@ -18,11 +18,35 @@
 
 function addReview($dbh, $title, $score, $post)
 {
+    try
+    {
     $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score) values (?, ?, ?)');
     $stmt->execute(array($title, $post, $score));
-    // header("Location: index.php");    /* Redirect browser */
+    }
+
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
 
     return ($stmt->fetch());
+}
+
+function getAllReviews($dbh)
+{
+    try 
+    {
+        $stmt = $dbh->prepare('SELECT * FROM Review');
+        $stmt->execute();  
+
+        $reviews = $stmt->fetchAll();
+    } 
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
+
+    return $reviews;
 }
 
 ?>

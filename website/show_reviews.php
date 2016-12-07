@@ -2,17 +2,10 @@
 include('templates/html_header.html');
  
 include_once('database/connection.php');
+include_once('database/review.php');
 
-try {
-    $stmt = $dbh->prepare('SELECT * FROM Review');
-    $stmt->execute();  
+$reviews = getAllReviews($dbh);
 
-    $reviews = $stmt->fetchAll();
-
-} catch (PDOException $e) {
-    echo $e->getMessage();
-}
- 
 include('templates/review_show.php');
 
  ?>
