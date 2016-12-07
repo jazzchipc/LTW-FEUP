@@ -16,11 +16,13 @@
 //
 // http://stackoverflow.com/questions/595358/how-can-i-execute-a-php-function-in-a-form-action
 
-include('connection.php');
-
-function add_review($title, $score, $post)
+function addReview($dbh, $title, $score, $post)
 {
-    
+    $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score) values (?, ?, ?)');
+    $stmt->execute(array($title, $post, $score));
+    // header("Location: index.php");    /* Redirect browser */
+
+    return ($stmt->fetch());
 }
 
 ?>

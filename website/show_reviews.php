@@ -1,21 +1,20 @@
 <?php
 include('templates/html_header.html');
  
-include('database/connection.php');
+include_once('database/connection.php');
 
 try {
     $stmt = $dbh->prepare('SELECT * FROM Review');
     $stmt->execute();  
 
-    while ($row = $stmt->fetch()) {
-      var_dump($row);
-      echo "<br>";
-    }
+    $reviews = $stmt->fetchAll();
 
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
  
+include('templates/review_show.php');
+
  ?>
 
 
