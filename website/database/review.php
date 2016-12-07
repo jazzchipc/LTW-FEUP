@@ -29,7 +29,7 @@ function addReview($dbh, $title, $score, $post)
         echo $e->getMessage();
     }
 
-    return ($stmt->fetch());
+    return intval($dbh->lastInsertId());    // get ID of added record
 }
 
 function getAllReviews($dbh)
