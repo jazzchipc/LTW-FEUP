@@ -20,7 +20,7 @@ function addReview($dbh, $title, $score, $post)
 {
     try
     {
-        $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score) values (?, ?, ?)');
+        $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score, date) values (?, ?, ?, CURRENT_TIMESTAMP)');
         $stmt->execute(array($title, $post, $score));
     }
 

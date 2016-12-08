@@ -4,7 +4,7 @@ function addReply($dbh, $review_id, $user_id, $parent_id, $reply_comment)
 {
     try
     {
-        $stmt = $dbh->prepare('INSERT INTO Reply (review_id, user_id, parent_id, reply_comment) values (?, ?, ?, ?)');
+        $stmt = $dbh->prepare('INSERT INTO Reply (review_id, user_id, parent_id, reply_comment, date) values (?, ?, ?, ?, CURRENT_TIMESTAMP)');
         $stmt->execute(array($review_id, $user_id, $parent_id, $reply_comment));
     }
 
