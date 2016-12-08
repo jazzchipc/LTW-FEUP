@@ -17,5 +17,5 @@
         die($e->getMessage());
     }
 
-    header('Location: show_reviews.php');
+    header('Location: /show_reviews.php');
 ?>

@@ -33,8 +33,21 @@ function getAllReplies($dbh)
     return $reviews;
 }
 
-include('connection.php');
+function getAllReviewReplies($dbh, $review_id)
+{
+    try 
+    {
+        $stmt = $dbh->prepare('SELECT * FROM Reply WHERE review_id = ?');
+        $stmt->execute(array($review_id));  
 
-var_dump(addReply($dbh, 1, 1, null, "Hi, Hello. My name is Joe"));
+        $repliesToReview = $stmt->fetchAll();
+    } 
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
+
+    return $repliesToReview;
+}
 
 ?>

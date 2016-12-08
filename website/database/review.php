@@ -20,8 +20,8 @@ function addReview($dbh, $title, $score, $post)
 {
     try
     {
-    $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score) values (?, ?, ?)');
-    $stmt->execute(array($title, $post, $score));
+        $stmt = $dbh->prepare('INSERT INTO Review (title, comment, score) values (?, ?, ?)');
+        $stmt->execute(array($title, $post, $score));
     }
 
     catch (PDOException $e) 
