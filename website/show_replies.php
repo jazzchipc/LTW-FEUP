@@ -1,7 +1,12 @@
 <?php
 
 include('templates/header.php');
+?>
+
+<h1>Replies</h1>
  
+<?php
+
 include_once('database/connection.php');
 include_once('database/reply.php');
 
