@@ -1,6 +1,6 @@
 <?php
-    include('templates/html_header.html');
-    include_once('database/review.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/html_header.html');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
 ?>
 
 <h2> Write a review </h2>
@@ -35,5 +35,5 @@
 </form>
 
 <?php
-    include('templates/html_footer.html');  
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/html_footer.html');  
 ?>
