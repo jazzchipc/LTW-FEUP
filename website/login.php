@@ -1,7 +1,7 @@
 <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); ?>
 
-<div class="Registration" >
-    <h2>Register</h2>
+<div class="Login" >
+    <h2>Login</h2>
 
     <form action="/database/add_user.php" method="post">
 
@@ -14,4 +14,8 @@
 </div>
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
+<?php 
+
+include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
+
+?>
