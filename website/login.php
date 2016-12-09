@@ -5,17 +5,12 @@
 
     <form action="/database/add_user.php" method="post">
 
-        <label>Username<input name="username" type="text" required></label>
-        <label>Email<input name="email" type="email" required></label>
+        <label>Username/email<input name="username" type="text" required></label>
         <label>Password<input name="password" type="password" required></label>
-        <input type="submit" value="Register">
+        <input type="submit" value="Login">
 
     </form>
 </div>
 
 
-<?php 
-
-include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
-
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>

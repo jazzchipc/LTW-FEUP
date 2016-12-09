@@ -5,40 +5,49 @@ body{
 
 header{
     background-color: moccasin;
-    padding: 30px;
-  
+    padding: 50px;
+}
+
+header a{
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* Title */
-h1 a{
-    text-decoration: none;
-    font-weight: bold;
+header h1{
     font-size: 40px;
-}
-
-h1{
     text-align: center;
 }
 
-/* Menu bar */
-ul{
-    background-color: moccasin;
-    list-style-position: none;
-    padding: 10px;
+/* Login */
+header .login{
+    font-size: 15px;
+    top: 0px;
 }
 
-.menu ul li{
+header .login ul li{
     display: inline-block;
     border-right: 1px solid black;
-    padding: 0 100px;
-    margin: 10px 0;
+    padding: 0 15px;  
 }
 
-.menu ul li:last-child{
+header .login ul li:last-child{
     border-right: 1px solid moccasin;
 }
 
-.menu ul li a{
+/* Menu bar */
+
+header .menu ul li{
+    display: inline-block;
+    border-right: 1px solid black;
+    padding: 0 100px;
+}
+
+header .menu ul li:last-child{
+    border-right: 1px solid moccasin;
+}
+
+header .menu ul li a{
     color: black;
     text-decoration: none;
 }

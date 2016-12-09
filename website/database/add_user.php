@@ -4,8 +4,8 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/connection.php');
-    include_once ($_SERVER['DOCUMENT_ROOT'].'/user.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
+    include_once ($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
 
     if(userExists($dbh, $username, $email) == false){
         $stmt = $dbh->prepare('INSERT INTO User(user_name, email, password)
