@@ -1,6 +1,6 @@
 <?php
 
-include('templates/html_header.html');
+include('templates/header.php');
  
 include_once('database/connection.php');
 include_once('database/reply.php');
@@ -16,6 +16,6 @@ include('templates/reply_show.php');
 
 <?php
 
-include('templates/html_footer.html');
+include('templates/footer.php');
 
 ?>

@@ -1,14 +1,14 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/html_header.html');
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
 ?>
 
-<h2> Write a review </h2>
+<h1> Write a review </h1>
 
 <form action ="save_review.php" method ="post" id ="review_form">
 
     <div id="title">
-        <label>Title
+        <label><p>Title</p>
         <input type="text" name="title" required>
         </label>
     </div>
@@ -35,5 +35,5 @@
 </form>
 
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/html_footer.html');  
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');  
 ?>

@@ -21,5 +21,5 @@
     </div>
 
   <form action="/show_users.php" method="post">
-      <input name="username" type="text" placeholder="Search..">
+      <input name="username" type="text" placeholder="Search...">
   </form>

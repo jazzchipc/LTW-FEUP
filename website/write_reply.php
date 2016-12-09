@@ -1,5 +1,5 @@
 <?php
-    include('templates/html_header.html');
+    include('templates/header.php');
     include_once('database/reply.php');
 ?>
 
@@ -24,5 +24,5 @@
 </form>
 
 <?php
-    include('templates/html_footer.html');  
+    include('templates/footer.php');  
 ?>

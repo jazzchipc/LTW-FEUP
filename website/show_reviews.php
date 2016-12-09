@@ -1,6 +1,6 @@
 <?php
 
-include('templates/html_header.html');
+include('templates/header.php');
  
 include_once('database/connection.php');
 include_once('database/review.php');
@@ -9,6 +9,6 @@ $reviews = getAllReviews($dbh);
 
 include('templates/review_show.php');
 
-include('templates/html_footer.html');
+include('templates/footer.php');
 
 ?>
