@@ -6,6 +6,16 @@ include('templates/header.php');
 <h1>Reviews</h1>
 
 <p><a href="/write_review.php">Write a review...</a></p>
+
+<!-- This script activates the accordion function of jqueryUI, to be used in the review_show.php. -->
+ <script>
+  $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true,
+      heightStyle: "content"
+    });
+  } );
+  </script>
  
 <?php
 
