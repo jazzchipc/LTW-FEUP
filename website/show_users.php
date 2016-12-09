@@ -1,7 +1,7 @@
 <?php
-    include ('templates/header.php');
-    include_once('database/connection.php');  
-    include_once('database/user.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');  
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
 
     try{
         $username = $_POST["username"];
@@ -12,6 +12,6 @@
         die($e->getMessage());
     }
     
-    include ('templates/user.php');
-    include ('templates/footer.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'/templates/user.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
 ?>

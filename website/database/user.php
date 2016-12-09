@@ -44,6 +44,5 @@
         return $stmt->fetchall();
     }
     
-    var_dump(getAllUsers($dbh));
 
 ?>
