@@ -1,6 +1,4 @@
-<?php
-
-include('templates/html_header.html'); ?>
+<?php include ('templates/header.php'); ?>
 
 <h2>Register</h2>
 
@@ -15,6 +13,6 @@ include('templates/html_header.html'); ?>
 
 <?php 
 
-include('templates/html_footer.html');
+include('templates/footer.php');
 
 ?>

@@ -1,6 +1,16 @@
 <?php
 
-    include('connection.php');
+    function userExists($dbh, $username, $email){
+        $res_name = getUserByName($dbh, $username);
+        $res_email = getUserByEmail($dbh, $email);
+
+        if($res_name == NULL && $res_email == NULL){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
     
     function getAllUsers($dbh){
         $stmt = $dbh->prepare('SELECT * FROM User');

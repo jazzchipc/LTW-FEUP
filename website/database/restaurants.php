@@ -1,7 +1,5 @@
 <?php
 
-     include('connection.php');
-
     function getRestaurantsByName($dbh, $name){
         $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name FROM Restaurant WHERE Restaurant.restaurant_name = ?');
         $stmt->execute(array($name)); //$stmt->execute(array($_GET['name']));

@@ -4,12 +4,23 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    include ('connection.php');
-    include ('user.php');
+    include_once('connection.php');
+    include_once ('user.php');
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if(userExists($dbh, $username, $email) == false){
+        $stmt = $dbh->prepare('INSERT INTO User(user_name, email, password)
+                                VALUES (?, ?, ?)');
+        $stmt->execute(array($username, $email, $password));
 
-        $res_name = getUserByName($dbh, $username);
+        echo '<script> alert("New user added") </script>';
+    }
+
+    else{
+        echo '<script> alert("User already exists.") </script>';
+        header('refresh:2; url=../registration.php');
+    }
+
+        /*$res_name = getUserByName($dbh, $username);
         $res_email = getUserByEmail($dbh, $email);
 
         if($res_name == NULL && $res_email == NULL){
@@ -26,12 +37,6 @@
         else{
             echo "Email <strong>" . $email . "</strong> is already registered";
             header('refresh:2; url=../registration.php');
-        }
-    
-    } 
-    else {
-        echo "This ($email) email address is considered invalid.\n"; 
-        header('refresh:2; url=../registration.php'); 
-    }
-    
+        }*/ 
+
 ?>
