@@ -1,5 +1,4 @@
-<section id="reviews">
-  <div id="accordion">
+<section id="restaurant_reviews">
   <?php foreach ($reviews as $review) { ?>
 
   <?php
@@ -9,14 +8,16 @@
     } 
   ?>
 
+  <div class="restaurant_review">
+
     <h3><?=$review['title']?></h3>
     <div>
-      <p>Score: <?=$review['score']?></p>
+      <span class="stars"><?=$review['score']?></span>
       <p><?=$review['comment']?></p>
       <h6>On: <?=$review['date']?></h6>
       <a href="show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
     </div>
-
-  <?php } ?>
   </div>
+  <?php } ?>
+  
 </section>
