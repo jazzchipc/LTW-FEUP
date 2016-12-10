@@ -1,16 +1,36 @@
+ /*** REM VS EM
 
-body{
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+-REM == ROOT EM: is always equal to the HTML font-size.
+-EM is equal to the font-size of the parent.
+
+*/
+
+/* GENERAL SETTINGS */
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
 header{
     background-color: moccasin;
-    padding: 50px;
+    padding: 2rem;
 }
 
-header a{
+h1 {
+    font-size: 3rem;
+}
+
+/* CONTENT */
+/*#content{
+    padding: 0 4 0px;
+}*/
+
+/* HEADER */
+header h1 a{
     text-decoration: none;
     font-weight: bold;
+    font-size: 4rem;
 }
 
 /* Title */
@@ -36,6 +56,11 @@ header .login ul li:last-child{
 }
 
 /* Menu bar */
+ul{
+    background-color: moccasin;
+    list-style-position: none;
+    padding: 10px;
+}
 
 header .menu ul li{
     display: inline-block;
@@ -52,124 +77,29 @@ header .menu ul li a{
     text-decoration: none;
 }
 
+/* RESTAURANT REVIEW */
 
+#restaurant_reviews {
+    padding: 0.1rem 1rem;
+    margin: 1rem 0;
+}
 
+.restaurant_review {
+    margin: 0 0 3rem 0;
+}
 
-/**
- * HEADER
- */
-/*
-#header{
-    background-color: grey;
-    color: white;
-    
+.restaurant_review h3 {
     font-weight: bold;
-    padding: 30px;
+    margin: 0 0 1rem;
 }
 
-h1{
-    font-size: 30px;
-}*/
-
-/*paragraph*/
-/*
-h2:before{content: '\A';}
-    
-h2{
-    white-space: pre;
-    font-size: 25px;
-}
-*/
-
-
-/**
- * HTML
- */
-/*
-html{
-    margin-left: 24%;
-    margin-right: 24%;
-    background-color: rgb(221, 221, 255);
-    font-family: Arial, Helvetica, sans-serif;
-}*/
-
-/**
-* BODY
-*/
-/*
-body{
-    background-color: white;
-}*/
-
-
-/**
-*   MENU
-*/
-/*
-#menu ul li{
-    display: inline-block;
-    border-left: 1px solid white;
-    padding: 0 10px;
-    margin: 10px 0;
+span.stars, span.stars span {
+    display: block;
+    background: url(/resources/img/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
 }
 
-#menu ul li:first-child{
-    border-left: 0px;
+span.stars span {
+    background-position: 0 0;
 }
-
-#menu a{
-    text-decoration: none;
-    color: white;
-
-}
-
-#menu {
-    background-color: darkred;
-    text-align: left;
-}*/
-
-
-/**
-* CONTENT 
-*/
-/*#content{
-    padding: 0 4 0px;
-}
-
-h3{
-    font-weight: bold;
-    font-size: 25px;
-    padding: 6 4 6px;
-}
-
-img{
-    float: left;
-    padding: 10px;
-}
-
-#content .introduction{
-    font-style: italic; 
-}
-
-#content  a{
-    text-decoration: none;
-}
-
-p{
-    padding: 1rem;  
-}
-
-#content ul li{
-    display: inline-block;
-    padding: 0 15px;
-}
-
-#content ul li a{
-    background-color: darkslategrey;
-    color: white;
-}
-
-#content .news-item{
-    padding: 10px;
-    border-bottom: 1px solid black;
-}*/
