@@ -12,6 +12,6 @@
         die($e->getMessage());
     }
     
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/user.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'/templates/user_name.php');
     include ($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
 ?>
