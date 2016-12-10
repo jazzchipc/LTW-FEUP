@@ -4,31 +4,37 @@
 
     $username = $_POST["username"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $old_password = $_POST["password"];
 
 ?>
 
-  <script>
-    $( function() {
-        $( document ).tooltip();
-    } );
-    </script>
-
 <div class="edit_users_info">
-    
-    <form action="database/add_user.php" method="post">
 
-        <label>Username<input name="username" type="text" value="<?= $username?>" readonly="true"></label>
-        <label>Email <input name="email" type="email" value="<?= $email ?>"></label>
-        <label>Old Password <input id="old_password" type="password" value="" required></label>
-        <label>New Password <input id="new_password" type="password" value="" required></label>
-        <label>Confirm Password <input id="confirm_password" type="password" value="" required></label>
-        <input type="submit" value="Edit">
+    <form action="database/edit_user.php" method="post">
+
+        <label>Username</label><input name="username" type="text" value="<?= $username?>" readonly="true">
+        <label>Email</label><input name="email" type="email" value="<?= $email ?>">
+
+        <label for="old_password">Old</label> 
+        <input type="password" name="old_password" id="old_password" placeholder="Insert actual pasword" onkeyup="validateOldPassword();">
+        
+         
+        <label for="new_password">Password</label>
+        <input type="password" name="new_password" id="new_password" placeholder="Insert new pasword" onchange="validateNewPassword();">
+        
+        <label for="confirm_password">Confirm</label> 
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm new pasword" onkeyup="validateNewPassword();">
+        <span id="confirmMessage" class="confirmMessage" >
+
+        <input id="edit" type="submit" value="Edit">
 
     </form>
 </div>
 
-<script src="/resources/js/confirm_passwords.js"></script>
+<script type="text/javascript">var old = "<?=$old_password?>" </script>
+<script src="/resources/js/confirm_old_passwords.js"> </script>
+
+<script src="/resources/js/confirm_new_passwords.js"> </script>
 
 
 <?php 
