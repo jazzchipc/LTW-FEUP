@@ -7,10 +7,12 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
     include_once ($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
 
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
     if(userExists($dbh, $username, $email) == false){
         $stmt = $dbh->prepare('INSERT INTO User(user_name, email, password)
                                 VALUES (?, ?, ?)');
-        $stmt->execute(array($username, $email, $password));
+        $stmt->execute(array($username, $email, $hashedPassword));
 
         echo '<script> alert("New user added") </script>';
     }
