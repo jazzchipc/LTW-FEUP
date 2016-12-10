@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Restaurant Site</title>
+    <title>Food Corner</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/resources/css/reset.css">
     <link rel="stylesheet" href="/resources/css/jquery-ui.theme.css">
@@ -18,8 +18,6 @@
 
     <script src="/lib/jquery.js"></script>
     <script src="/lib/jquery-ui.min.js"></script>
-
-   
 
   </head>
   <body>
@@ -55,7 +53,7 @@
         </ul>
       </div>
       
-      <h1><a href="/index.php">My Restaurant Site</a></h1>
+      <h1><a href="/index.php">Food Corner</a></h1>
 
       <div class="menu" >
         <ul>

@@ -1,12 +1,12 @@
 <?php
-  include('templates/html_header.html'); 
+  include('../templates/header.php'); 
 ?>
 
 <h1>Restaurant Index</h1>
 
 <?php 
 
-include('database/connection.php');
+include('../database/connection.php');
 
 try {
     // ONLY prepares
@@ -37,5 +37,5 @@ try {
 ?>
 
 <?php
-  include('templates/html_footer.html');
+  include('../templates/footer.php');
 ?>
