@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,6 +13,7 @@
     <link rel="stylesheet" href="/resources/css/jquery-ui.structure.css">
 
     <link rel="stylesheet" href="/resources/css/style.css">
+    <link rel="icon" href= "/resources/img/fork_knife.ico">
     
 
     <script src="/lib/jquery.js"></script>
@@ -23,8 +28,30 @@
 
       <div class="login" >
         <ul>
-          <li><a href="/login.php">Login</a></li>
-          <li><a href="/registration_user.php">Sign Up</a></li>
+          <?php
+          if(isset($_SESSION['authenticated']))
+          {
+            if($_SESSION['authenticated'] == true)
+            {
+            ?>
+
+              <li>Hello <?=$_SESSION['user_name']?></li>
+              <li><a href="/logout.php">Logout</a></li>
+
+            <?php
+          }}
+
+            else
+            { 
+            ?>
+
+            <li><a href="/login.php">Login</a></li>
+            <li><a href="/registration_user.php">Sign Up</a></li>
+
+            <?php
+            }
+          
+          ?>
         </ul>
       </div>
       
