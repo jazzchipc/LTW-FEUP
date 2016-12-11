@@ -9,26 +9,32 @@
 
     $user = getUserByName($dbh, $username);
 
-    if ($user['email'] != $email){
-        $stmt = $dbh->prepare('UPDATE User
-                                SET email = ?
-                                WHERE User.user_name = ?');
-        
-        $stmt->execute(array($email, $username));
+    $user_aux = getUserByEmail($dbh, $email);
 
-        echo '<script> alert("Updated user email") </script>';
+    if ($user['email'] != $email){
+        if ($user_aux === false){
+            $stmt = $dbh->prepare('UPDATE User
+                                    SET email = ?
+                                    WHERE User.user_name = ?');
+            
+            $stmt->execute(array($email, $username));
+
+            echo '<script> alert("Updated user email") </script>';
+        }
+        else{
+            echo '<script> alert("This email is already registered") </script>';
+        }
     }
 
-
-    if ($user['password'] != $password && strlen($password)>=6 && strlen($password) <= 20){
+    if ($user['password'] != $password && strlen($password) > 0){
         $stmt = $dbh->prepare('UPDATE User
-                                SET email = ?
+                                SET password = ?
                                 WHERE User.user_name = ?');
         
-        $stmt->execute(array($email, $username));
+        $stmt->execute(array($password, $username));
 
-        echo '<script> alert("Updated user email") </script>';
+        echo '<script> alert("Updated user password") </script>';
     }
     
-
+    header('Location: ../index.php');
 ?>

@@ -18,8 +18,8 @@
         <label>Email</label>
         <input name="email" type="email" value="<?= $email ?>">
 
-        <label for="old_password">Old</label> 
-        <input type="password" name="old_password" id="old_password" placeholder="Insert actual pasword" onkeyup="validateOldPassword();">
+        <label for="old_password">Actual Password</label> 
+        <input type="password" name="old_password" id="old_password" value="" placeholder="Insert actual pasword" onkeyup="validateOldPassword();">
         
          
         <label for="new_password">Password</label>
