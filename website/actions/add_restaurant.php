@@ -9,8 +9,11 @@
 <form action ="" method ="post" id ="reply_form">
 
     <div id="restaurant_information">
-        <label>Name</label>
-        <input type="text" name="restaurant_name" required></textarea>
+        <div><label>Name</label>
+        <input type="text" name="restaurant_name" required></input></div>
+
+        <div><label>Description</label>
+        <textarea name="restaurant_description" required></textarea></div>
         
     </div>
 
