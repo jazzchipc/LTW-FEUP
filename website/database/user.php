@@ -19,7 +19,7 @@
     }
 
     function getUserByName($dbh, $name){
-        $stmt = $dbh->prepare('SELECT * FROM User WHERE User.user_name = ?');
+        $stmt = $dbh->prepare('SELECT * FROM User WHERE User.user_name = ? COLLATE NOCASE');
         $stmt->execute(array($name)); //$stmt->execute(array($_GET['name']));
         return $stmt->fetch();
     }

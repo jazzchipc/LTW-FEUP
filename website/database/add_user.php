@@ -22,6 +22,8 @@
         header('refresh:2; url=../registration.php');
     }
 
+    include_once($_SERVER['DOCUMENT_ROOT'].'/index.php');
+
         /*$res_name = getUserByName($dbh, $username);
         $res_email = getUserByEmail($dbh, $email);
 
