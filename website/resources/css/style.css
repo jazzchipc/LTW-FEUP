@@ -14,7 +14,7 @@ html{
     font-size: 15px;
 }
 
-body * {
+content > * {
     padding: 0 2rem;
     margin: 1rem 0;
 }
@@ -44,6 +44,7 @@ header{
     background-color: moccasin;
     padding: 1rem;
     margin: 0;
+    position: relative;
 }
 
 header * {
@@ -105,20 +106,20 @@ header .login ul li:last-child{
 }
 
 /* Menu bar */
-ul{
+header ul{
     list-style-position: none;
 }
 
-header .menu{
-    display: table;
-    margin: 0 auto;
+header .menu {
+    margin: 1rem 0 0;
 }
 
 header .menu ul li{
     display: inline-block;
     border-right: 1px solid black;
     padding: 0 5rem;
-    margin: 1rem 0;
+    margin-left:0;
+    margin-right: auto;
 }
 
 header a:hover{
@@ -138,10 +139,13 @@ header .menu ul li a{
     text-decoration: none;
 }
 
-/* CONTENT */
-/*#content{
-    padding: 0 4 0px;
-}*/
+/* Search bar */
+
+#search_box {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 1rem; 
+}
 
 /* RESTAURANT REVIEW */
 
@@ -199,7 +203,7 @@ label{
     display: inline-block;
 }
 
-form  * {
+form label {
     margin: 1rem 0;
 }
 

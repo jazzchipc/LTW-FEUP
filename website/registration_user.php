@@ -5,9 +5,15 @@
 
     <form action="/database/add_user.php" method="post">
 
-        <label>Username<input name="username" type="text" required></label>
-        <label>Email<input name="email" type="email" required></label>
-        <label>Password<input name="password" type="password" required></label>
+        <label>Username</label>
+        <input name="username" type="text" required>
+
+        <label>Email</label>
+        <input name="email" type="email" required>
+
+        <label>Password</label>
+        <input name="password" type="password" required>
+        
         <input type="submit" value="Register">
 
     </form>

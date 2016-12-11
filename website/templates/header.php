@@ -61,11 +61,14 @@
           <li>About me</li>
           <li>Restaurants</li>
         </ul>
+        
       </div>
-      
-      <form action="/show_users.php" method="post">
-          <input id="search_box" name="username" type="text" placeholder="Search..">
+
+       <form action="/show_users.php" method="post">
+              <input id="search_box" name="username" type="text" placeholder="Search..">
       </form>
+      
+      
 
     </header>
 
