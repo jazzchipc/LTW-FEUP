@@ -1,4 +1,4 @@
-  
+  </content>
   <footer>
     
     <h1>Developed for LTW-FEUP</h1> 

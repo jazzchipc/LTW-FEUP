@@ -46,8 +46,15 @@ header{
     margin: 0;
 }
 
-header > * {
+header * {
     margin:0;
+    padding: 0;
+}
+
+header input{
+    padding: 0.3rem 0.5rem;
+    margin: 0.2rem;
+    box-sizing: border-box;
 }
 
 
