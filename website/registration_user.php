@@ -3,13 +3,23 @@
 <div class="registration" >
     <h2>Register</h2>
 
-    <form action="/database/add_user.php" method="post">
+    <form enctype="multipart/form-data" action="/database/add_user.php" method="post">
 
         <label>Username</label>
         <input name="username" type="text" required>
 
+        <label>First name</label>
+        <input name="firstname" type="text" required>
+
+        <label>Last name</label>
+        <input name="lastname" type="text" required>
+
         <label>Email</label>
         <input name="email" type="email" required>
+
+        <label>Photo</label>
+        <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+        <input name="photo" id="photo" value="" type="file" accept="image/*"/>
 
         <label for="password">Password</label>
         <input type="password" name="password" id="password" onkeyup="verifyPasswordSize();" required>
