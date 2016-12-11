@@ -30,9 +30,14 @@
 
         <form action="/actions/authentication.php" method="post">
 
-            <label>Username/email<input name="username" type="text" value="<?= $suggestedUserName?>" required></label>
-            <label>Password<input name="password" type="password" required></label>
-            <input type="submit" value="Login">
+            <div><label>Username/email</label>
+            <input name="username" type="text" value="<?= $suggestedUserName?>" required></div>
+  
+            <div><label>Password</label>
+            <input name="password" type="password" required></div>
+
+            <div>
+            <input type="submit" value="Login"></div>
 
         </form>
     </div>
