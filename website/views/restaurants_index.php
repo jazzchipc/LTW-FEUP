@@ -36,7 +36,7 @@ try {
 }
 ?>
 
-<a href="/actions/add_restaurant.php">Add restaurant</a>
+<a href="/views/<restaurant_add></restaurant_add>.php">Add restaurant</a>
 
 <?php
   include('../templates/footer.php');

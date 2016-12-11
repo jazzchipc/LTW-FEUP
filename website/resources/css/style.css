@@ -152,10 +152,12 @@ header .menu ul li a{
     position: absolute;
     bottom: 0.5rem;
     right: 1rem; 
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 800px) {
     #search_box {
+        margin: 1rem 0 0 0;
         position: static;
     }
 }
@@ -259,3 +261,13 @@ textarea {
     height: 3rem;
 }
 
+/* SPINNERS */
+
+#restaurant_information > div > span{
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.spinner_jquery{
+    width: 2rem;
+}
