@@ -36,6 +36,12 @@
         return $stmt->fetch();
     }
 
+    function getPasswordById($dbh, $id){
+        $stmt = $dbh->prepare('SELECT User.password FROM User WHERE User.user_id = ?');
+        $stmt->execute(array($id));
+        return $stmt->fetch()['password'];
+    }
+
     function getOwnersOfRestaurant($dbh, $restaurant_name){
         $stmt = $dbh->prepare('SELECT User.user_name
                                FROM User
