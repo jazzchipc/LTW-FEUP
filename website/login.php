@@ -15,7 +15,7 @@
 <div class="Login" >
     <h2>Login</h2>
 
-    <form action="/authentication.php" method="post">
+    <form action="/actions/authentication.php" method="post">
 
         <label>Username/email<input name="username" type="text" value="<?= $suggestedUserName?>" required></label>
         <label>Password<input name="password" type="password" required></label>

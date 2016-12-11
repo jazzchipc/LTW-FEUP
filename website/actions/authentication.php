@@ -1,7 +1,7 @@
 <?php
 
-    include_once('/database/connection.php');
-    include_once('/database/user.php');
+    include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
+    include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
 
     $givenUsername = $_POST['username'];
     $givenPassword = $_POST['password'];

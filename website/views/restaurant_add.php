@@ -69,7 +69,9 @@
 
 </script>
 
-<form action ="" method ="post" id ="restaurant_form" enctype="multipart/form-data">
+<form action ="/actions/save_restaurant.php" method ="post" id ="restaurant_form" enctype="multipart/form-data">
+
+    <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>" />
 
     <div id="restaurant_information">
         <div><label>Name</label>
