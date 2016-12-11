@@ -12,8 +12,11 @@
 
     <form action="database/edit_user.php" method="post">
 
-        <label>Username</label><input name="username" type="text" value="<?= $username?>" readonly="true">
-        <label>Email</label><input name="email" type="email" value="<?= $email ?>">
+        <label>Username</label>
+        <input name="username" type="text" value="<?= $username?>" readonly="true">
+
+        <label>Email</label>
+        <input name="email" type="email" value="<?= $email ?>">
 
         <label for="old_password">Old</label> 
         <input type="password" name="old_password" id="old_password" placeholder="Insert actual pasword" onkeyup="validateOldPassword();">
@@ -24,17 +27,15 @@
         
         <label for="confirm_password">Confirm</label> 
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm new pasword" onkeyup="validateNewPassword();">
-        <span id="confirmMessage" class="confirmMessage" >
+        <span id="confirmMessage" class="confirmMessage"></span>
 
-        <input id="edit" type="submit" value="Edit">
+        <input id="edit" type="submit" value="Edit" onclick="return validateAll();">
 
     </form>
 </div>
 
 <script type="text/javascript">var old = "<?=$old_password?>" </script>
-<script src="/resources/js/confirm_old_passwords.js"> </script>
-
-<script src="/resources/js/confirm_new_passwords.js"> </script>
+<script src="/resources/js/confirm_passwords.js"> </script>
 
 
 <?php 

@@ -120,3 +120,11 @@ span.stars span {
 .edit_users_info .edit{
     float: left;
 }
+
+.registration label{
+    display: block;
+}
+
+.registration .button{
+    display: block;
+}
