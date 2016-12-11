@@ -22,7 +22,7 @@
     // Check if file already exists
     if (file_exists($target_file)) {
         echo '<script> alert("Sorry, file already exists.") </script>';
-        $uploadOk = 0;
+        $uploadOk = 1;
     }
 
     // Check file size

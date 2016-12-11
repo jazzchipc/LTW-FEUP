@@ -12,7 +12,7 @@
 
 <div class="edit_users_info">
 
-    <form action="database/edit_user.php" method="post">
+    <form enctype="multipart/form-data" action="database/edit_user.php" method="post">
 
         <label>Username</label>
         <input name="username" type="text" value="<?= $username?>" readonly="true">
@@ -41,7 +41,7 @@
         <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm new pasword" onkeyup="validateNewPassword();">
         <span id="confirmMessage" class="confirmMessage"></span>
 
-        <input id="edit" type="submit" value="Edit" onclick="return validateAll();">
+        <input type="submit" id="edit" value="Edit" onclick="return validateAll();">
 
     </form>
 </div>
