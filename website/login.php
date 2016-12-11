@@ -10,19 +10,34 @@
     {
         $suggestedUserName = "";
     }
-?>
 
-<div class="Login" >
-    <h2>Login</h2>
+    if(isset($_SESSION['authenticated']))
+    {
+        if($_SESSION['authenticated'] == true)
+        {
+            header('Refresh:0; url= /index.php');
+            echo '<script language="javascript">';
+            echo 'alert("You\'re already logged in")';
+            echo '</script>';
+        }
+    }
+    else
+    {
+    ?>
 
-    <form action="/actions/authentication.php" method="post">
+    <div class="Login" >
+        <h2>Login</h2>
 
-        <label>Username/email<input name="username" type="text" value="<?= $suggestedUserName?>" required></label>
-        <label>Password<input name="password" type="password" required></label>
-        <input type="submit" value="Login">
+        <form action="/actions/authentication.php" method="post">
 
-    </form>
-</div>
+            <label>Username/email<input name="username" type="text" value="<?= $suggestedUserName?>" required></label>
+            <label>Password<input name="password" type="password" required></label>
+            <input type="submit" value="Login">
 
+        </form>
+    </div>
+    
+    <?php
+    } 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>

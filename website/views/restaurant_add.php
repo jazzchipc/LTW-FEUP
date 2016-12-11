@@ -1,6 +1,7 @@
 <?php
 
-    include('../templates/header.php'); 
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/restrict_access.php');
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); 
 
 ?>
 

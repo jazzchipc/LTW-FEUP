@@ -34,10 +34,14 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+if(isset($_SESSION['authenticated']))
+{
 ?>
 
 <a href="/views/restaurant_add.php">Add restaurant</a>
 
 <?php
+}
   include('../templates/footer.php');
 ?>
