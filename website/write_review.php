@@ -8,25 +8,25 @@
 <form action ="save_review.php" method ="post" id ="review_form">
 
     <div id="title">
-        <label><p>Title</p>
+        <label>Title</label>
         <input type="text" name="title" required>
-        </label>
+        
     </div>
 
     <div id="score">
-        <label>Score
-        <label><input type="radio" name="score" value="1" required>1</label>
-        <label><input type="radio" name="score" value="2" required>2</label>
-        <label><input type="radio" name="score" value="3" required>3</label>
-        <label><input type="radio" name="score" value="4" required>4</label>
-        <label><input type="radio" name="score" value="5" required>5</label>
-        </label>
+        <label>Score</label>
+        <div class="radio_button"><input type="radio" name="score" value="1" required>1</div>
+        <div class="radio_button"><input type="radio" name="score" value="2" required>2</div>
+        <div class="radio_button"><input type="radio" name="score" value="3" required>3</div>
+        <div class="radio_button"><input type="radio" name="score" value="4" required>4</div>
+        <div class="radio_button"><input type="radio" name="score" value="5" required>5</div>
+       
     </div>
 
     <div id="review">
-        <label>Review
+        <label>Review</label>
         <textarea name="review" required></textarea>
-        </label>
+        
     </div>
     <div>
         <input type="submit" value="Submit">

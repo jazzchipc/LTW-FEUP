@@ -53,7 +53,7 @@
         </ul>
       </div>
       
-      <h1><a href="/index.php">Food Corner</a></h1>
+      <h1><a href="/index.php" id="title">Food Corner</a></h1>
 
       <div class="menu" >
         <ul>
@@ -61,13 +61,18 @@
           <li>About me</li>
           <li>Restaurants</li>
         </ul>
+        
       </div>
-      
-      <form action="/show_users.php" method="post">
-          <input name="username" type="text" placeholder="Search..">
+
+       <form action="/show_users.php" method="post">
+              <input id="search_box" name="username" type="text" placeholder="Search..">
       </form>
+      
+      
 
     </header>
+
+    <content>
     
 
   
