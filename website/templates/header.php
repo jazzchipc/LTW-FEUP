@@ -53,7 +53,7 @@
         </ul>
       </div>
       
-      <h1><a href="/index.php">Food Corner</a></h1>
+      <h1><a href="/index.php" id="title">Food Corner</a></h1>
 
       <div class="menu" >
         <ul>
@@ -64,7 +64,7 @@
       </div>
       
       <form action="/show_users.php" method="post">
-          <input name="username" type="text" placeholder="Search..">
+          <input id="search_box" name="username" type="text" placeholder="Search..">
       </form>
 
     </header>
