@@ -7,7 +7,10 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS User(
     user_id integer PRIMARY KEY,
     user_name varchar collate nocase NOT NULL UNIQUE,
+    first_name varchar collate nocase,
+    last_name varchar collate nocase,
     email varchar NOT NULL UNIQUE,
+    photo_url varchar, 
     password varchar NOT NULL
 );
 

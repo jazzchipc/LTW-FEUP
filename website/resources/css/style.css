@@ -100,12 +100,14 @@ header .login{
 
 header .login a {
     margin: 0;
+    text-decoration: none;
 }
 
 header .login ul li{
     display: inline-block;
     border-right: 1px solid black;
     padding: 0 1rem;  
+    
 }
 
 header .login ul li:last-child{
@@ -270,4 +272,13 @@ textarea {
 
 .spinner_jquery{
     width: 2rem;
+}
+
+.user_form {
+    text-align: center;
+}
+
+.user_form * {
+    display: inline-block;
+    text-align: center;
 }

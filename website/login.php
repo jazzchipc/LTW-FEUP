@@ -28,7 +28,7 @@
     <div class="Login" >
         <h2>Login</h2>
 
-        <form action="/actions/authentication.php" method="post">
+        <form class ="user_form" action="/actions/authentication.php" method="post">
 
             <div><label>Username/email</label>
             <input name="username" type="text" value="<?= $suggestedUserName?>" required></div>
