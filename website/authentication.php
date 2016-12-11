@@ -6,8 +6,23 @@
     $givenUsername = $_POST['username'];
     $givenPassword = $_POST['password'];
 
-    if($USER = getUserByName($dbh, $_POST['username']))
-    {
+
+    $USER = getUserByName($dbh, $_POST['username']);
+
+    if ($USER === false)
+        $USER = getUserByEmail($dbh, $_POST['username']);
+
+
+    if($USER === false){
+    ?>
+        <script> 
+            alert("User does not exist.");
+            
+        </script>
+        
+    <?php
+    }
+    else{
         // For cookies basic functions see: http://php.net/manual/en/features.cookies.php
 
         $cookieName = "user_name";
@@ -38,14 +53,5 @@
 
         setcookie($cookieName, $cookieValue, time()+$timeToExpire, "/");
     }
-    else
-    {
-    ?>
-        <script> 
-            alert("User does not exist.");
-            
-        </script>
-        
-    <?php
-    }
+    
 ?>
