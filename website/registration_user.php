@@ -23,7 +23,7 @@
 <div class="registration" >
     <h2>Register</h2>
 
-    <form class ="user_form" enctype="multipart/form-data" action="/database/add_user.php" method="post">
+    <form class ="user_form" enctype="multipart/form-data" action="/actions/add_user.php" method="post">
 
         <label>Username</label>
         <input name="username" type="text" autocomplete="off" required>

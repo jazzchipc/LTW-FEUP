@@ -9,7 +9,14 @@
 
 <h1>Reviews</h1>
 
-<p><a href="/views/review_add.php/?restaurant_id=<?= $_GET['restaurant_id'] ?>">Write a review...</a></p>
+<?php 
+    if(isset($_SESSION['authenticated']))
+    {
+    ?>
+        <p><a href="/views/review_add.php/?restaurant_id=<?= $_GET['restaurant_id'] ?>">Write a review...</a></p>
+<?php
+    }
+?>
 
   <!-- Star rating system -->
    <script src="/resources/js/star-rating.js"></script>
