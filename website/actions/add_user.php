@@ -18,10 +18,11 @@
 
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
 
-     
-    $photo = '/resources/img/uploads/users/'. $photo_name;
+    if(isset($_POST['photo'])){
+        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
+        $photo = '/resources/img/uploads/users/'. $photo_name;
+    }
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -33,44 +34,46 @@
         echo '<script> alert("New user added. Check your email.") </script>';
 
         // Send verification email
+        if(0)
+        {
+            ini_set('SMTP', 'smtp-mail.outlook.com');
 
-        /*ini_set('SMTP', 'smtp-mail.outlook.com');
+            require $_SERVER['DOCUMENT_ROOT'].'/vendors/php-mailer/PHPMailerAutoload.php';
 
-        require $_SERVER['DOCUMENT_ROOT'].'/vendors/php-mailer/PHPMailerAutoload.php';
+            $mail = new PHPMailer;
 
-        $mail = new PHPMailer;
+            $mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-        $mail->SMTPDebug = 3;                               // Enable verbose debug output
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp.sapo.pt';                  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'food_corner_ltw@sapo.pt';                        // SMTP username
+            $mail->Password = 'final_project';                                  // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
 
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp.fe.up.pt';                  // Specify main and backup SMTP servers
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        //$mail->Username = ''                          // SMTP username
-        //$mail->Password = ''                                 // SMTP password
-        //$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 587;                                    // TCP port to connect to
+            $mail->setFrom('food_corner_ltw@sapo.pt', 'Food Corner');
+            $mail->addAddress($email, $firstname.$lastname);     // Add a recipient
 
-        $mail->setFrom('from@example.com', 'Mailer');
-        $mail->addAddress('user_address@example.com', 'Joe User');     // Add a recipient
+            $mail->isHTML(true);                                  // Set email format to HTML
 
-        $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'Thank you for your Food Corner registration';
+            $mail->Body    = 'Welcome to out website!';
+            $mail->AltBody = 'Welcome to out website!';
 
-        $mail->Subject = 'Here is the subject';
-        $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-        if(!$mail->send()) {
-            echo 'Message could not be sent.';
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-        } else {
-            echo 'Message has been sent';
-        }*/
+            if(!$mail->send()) {
+                echo 'Message could not be sent.';
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
+                echo 'Message has been sent';
+            }
+        }
 
     }
 
     else{
         echo '<script> alert("User already exists.") </script>';
-        //header('refresh:2; url=/registration_user.php');
+        header('refresh:2; url=/registration_user.php');
     } 
 
 ?>
