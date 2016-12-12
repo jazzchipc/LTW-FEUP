@@ -39,7 +39,7 @@
 
         <label>Photo</label>
         <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
-        <input name="photo" id="photo" value="" type="file" accept="image/*"/>
+        <input name="photo" id="photo" type="file" accept="image/*"/>
 
         <label for="password">Password</label>
         <input type="password" name="password" id="password" onkeyup="verifyPasswordSize();" required>

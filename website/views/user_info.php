@@ -2,7 +2,6 @@
 <div class="user_info">
 
     <form action="/edit_user_info.php" method="post">
-
         <img src="<?= $user['photo_url'] ?>" alt="Profile Photo" width=200 height=200>
 
         <div class="user_name">
@@ -21,8 +20,16 @@
 
         <input name="password" type="hidden" value="<?= $user['password'] ?>" readonly="true">
 
-        <input type="submit" value="Edit">
-
+        <input id="edit" type="submit" value="Edit" style="visibility:hidden">
+        
     </form>
+
+    <script>
+        var session_user = "<?php echo $_SESSION['user_name']; ?>";
+        var user = "<?php echo $user['user_name']; ?>";
+        if (session_user == user){ 
+            document.getElementById("edit").style.visibility="visible";
+        }
+    </script>
 
 </div>

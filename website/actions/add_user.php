@@ -12,18 +12,23 @@
     if($captcha != $_SESSION['captcha']['code'])
     {
         echo '<script> alert("Bad captcha. Please try again.") </script>';
-        header('refresh:0; url=/registration_user.php');
+        header('refresh:0; url=/views/registration_user.php');
         die;
     }
 
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
 
-    if(isset($_POST['photo'])){
+    if ($_FILES['photo']['size'] != 0){
         include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
         $photo = '/resources/img/uploads/users/'. $photo_name;
     }
+    else{
+        $photo = '/resources/img/uploads/users/user.png';
+    }
 
+    
+    
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
     if(userExists($dbh, $username, $email) == false){
@@ -68,12 +73,26 @@
                 echo 'Message has been sent';
             }
         }
+        ?>
+        <!-- TO LOGIN AFTER REGISTER -->
+         <form id ="user_form" action="/actions/authentication.php" method="post">
 
+            <input name="username" type="hidden" value="<?= $username?>">
+  
+            <input name="password" type="hidden" value="<?=$password?>">
+
+        </form>
+
+        <script type="text/javascript">
+             document.getElementById('user_form').submit();
+        </script>
+
+    <?php
     }
 
     else{
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:2; url=/registration_user.php');
+        header('refresh:2; url=/views/registration_user.php');
     } 
 
 ?>

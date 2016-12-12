@@ -12,7 +12,7 @@
 
 <div class="edit_users_info">
 
-    <form enctype="multipart/form-data" action="database/edit_user.php" method="post">
+    <form enctype="multipart/form-data" action="/actions/edit_user.php" method="post">
 
         <label>Username</label>
         <input name="username" type="text" value="<?= $username?>" readonly="true">
