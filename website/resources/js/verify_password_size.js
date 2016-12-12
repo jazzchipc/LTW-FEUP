@@ -12,16 +12,16 @@ function verifyPasswordSize(){
 
     if(password.value.length >= 6 && password.value.length <= 20){
 
-        //password.style.backgroundColor = goodColor;
+        password.style.backgroundColor = goodColor;
         message.innerHTML = "";
         return true;
     }else if(password.value.length == 0){
-        //password.style.backgroundColor = white;
+        
         return false;
     }
     else{
 
-        //password.style.backgroundColor = badColor;
+        password.style.backgroundColor = badColor;
         message.style.color = badColor;
         message.innerHTML = "Password size must be between 6 and 20";
         return false;

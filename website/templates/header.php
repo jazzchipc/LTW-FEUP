@@ -35,7 +35,7 @@
             {
             ?>
 
-              <li><a href="/user_account.php?id=<?=$_SESSION['user_id']?>">Hello, <?=$_SESSION['user_name']?></li>
+              <li><a href="/templates/user_account.php?id=<?=$_SESSION['user_id']?>">Hello, <?=$_SESSION['user_name']?></li>
               <li><a href="/logout.php">Logout</a></li>
 
             <?php
@@ -45,8 +45,8 @@
             { 
             ?>
 
-            <li><a href="/login.php">Login</a></li>
-            <li><a href="/registration_user.php">Sign Up</a></li>
+            <li><a href="/views/login.php">Login</a></li>
+            <li><a href="/views/registration_user.php">Sign Up</a></li>
 
             <?php
             }
@@ -61,7 +61,7 @@
         <ul>
           <li><a href="/index.php" id="home">Home</a></li>
           <li><a href="/views/restaurants_index.php">Restaurants</a></li>
-          <li><a href="/show_reviews.php">Reviews</a></li>
+          <li><a href="/views/reviews_show_recent.php">Reviews</a></li>
         </ul>
 
         
@@ -74,6 +74,12 @@
       
 
     </header>
+
+    <flex-box>
+
+    <left-margin>
+      
+    </left-margin>
 
     <content>
     

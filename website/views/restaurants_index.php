@@ -16,9 +16,8 @@ try {
     // EXECUTES THE PREPARED STATEMENT. The array of input parameters is optional and restructs the solution
     $stmt->execute();  
 
-    while ($row = $stmt->fetch()) {
-      var_dump($row);
-      echo "<br>";
+    while ($restaurant = $stmt->fetch()) {
+      include($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show.php');
     }
 
     /*** var_dump vs echo vs print_r ***/
@@ -34,10 +33,14 @@ try {
 } catch (PDOException $e) {
     echo $e->getMessage();
 }
+
+if(isset($_SESSION['authenticated']))
+{
 ?>
 
-<a href="/actions/add_restaurant.php">Add restaurant</a>
+<a href="/views/restaurant_add.php">Add restaurant</a>
 
 <?php
+}
   include('../templates/footer.php');
 ?>

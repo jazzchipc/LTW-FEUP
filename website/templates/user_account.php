@@ -12,7 +12,7 @@
         die($e->getMessage());
     }
 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/user_info.php');
+    include ($_SERVER['DOCUMENT_ROOT'].'/views/user_info.php');
     include ($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
 ?>
 

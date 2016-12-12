@@ -6,12 +6,11 @@
 
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
 
-    if (isset($_POST["photo"]))
-        $photo_name = $_POST["photo"];
-    
-    $photo = '/resources/img/uploads/users/'. $photo_name;
+    if ($_FILES['photo']['size'] != 0){
+        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
+        $photo = '/resources/img/uploads/users/'. $photo_name;
+    }
     
     $user = getUserByName($dbh, $username);
 

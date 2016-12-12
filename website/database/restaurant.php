@@ -1,5 +1,16 @@
 <?php
 
+    function addRestaurant($dbh, $user_id, $restaurant_name, $restaurant_description, $restaurant_photo)
+    {
+        $stmt = $dbh->prepare('INSERT INTO Restaurant (restaurant_name, description, photo_url) VALUES (?, ?, ?)');
+        $stmt->execute(array($restaurant_name, $restaurant_description, $restaurant_photo));
+
+        $restaurant_id = intval($dbh->lastInsertId()); 
+
+        $stmt = $dbh->prepare('INSERT INTO Restaurant_Owners (restaurant_id, owner_id) VALUES (?, ?)');
+        $stmt->execute(array($restaurant_id, $user_id));
+    }
+
     function getRestaurantsByName($dbh, $name){
         $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name FROM Restaurant WHERE Restaurant.restaurant_name = ?');
         $stmt->execute(array($name)); //$stmt->execute(array($_GET['name']));
@@ -19,7 +30,5 @@
         $stmt->execute(array($user_name));
         return $stmt->fetchall();
     }
-
-    var_dump(getRestaurantsByOwner($dbh, 'Catarina'));
 
 ?>
