@@ -1,6 +1,6 @@
 <?php 
 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); 
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php'); 
 
     if(isset($_COOKIE["user_name"])) 
     {
@@ -17,12 +17,17 @@
 
     <form action="/authentication.php" method="post">
 
-        <label>Username/email<input name="username" type="text" value="<?= $suggestedUserName?>" required></label>
-        <label>Password<input name="password" type="password" required></label>
+        <label>Username/email</label>
+        <input name="username" id="username" type="text" value="<?= $suggestedUserName?>" required>
+        <span id="confirmMessage" class="confirmMessage"></span>
+
+        <label>Password</label>
+        <input name="password" type="password" required>
+
         <input type="submit" value="Login">
 
     </form>
 </div>
 
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
+<?php include_once($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
