@@ -2,6 +2,7 @@
 
 include('templates/header.php');
 ?>
+<div>
 
 <h1>Reviews</h1>
 
@@ -24,6 +25,8 @@ include('templates/header.php');
       $('span.stars').stars();
     });
    </script>
+
+</div>
  
 <?php
 

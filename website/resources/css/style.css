@@ -9,14 +9,41 @@
 
 /* GENERAL SETTINGS */
 
+
+
 html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
 
-content > * {
-    padding: 0 2rem;
-    margin: 1rem 0;
+left-margin{
+    background-color: #ffeccc;
+    flex: 1 6 15%;
+    order: 1;
+    height:100vh;
+}
+
+left-margin img{
+    height: auto;
+}
+
+right-margin{
+    background-color: #ffeccc;
+    flex: 1 6 15%;
+    order: 3;
+    height:100vh;
+}
+
+flex-box{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+content{
+    margin: 1rem; 
+    width: 50%;
+    flex: 3 1 70%;
+    order: 2;
 }
 
 h1 {
@@ -135,7 +162,7 @@ header a:hover{
     color: #cc8200;
 }
 
-header .menu ul li:hover{
+header .menu ul li a:hover{
     color: #cc8200;
 }
 
@@ -219,10 +246,16 @@ span.stars span {
 /* FOOTER */
 
 footer{
-    margin: 2rem;
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
+    position: fixed;
+    bottom: 2rem;  
     font-size: 0.8rem;
     text-align: center;
 }
+
+
 
 footer h1{
     font-size: 0.8rem;
@@ -263,6 +296,7 @@ textarea {
     height: 3rem;
 }
 
+
 /* SPINNERS */
 
 #restaurant_information > div > span{
@@ -272,4 +306,20 @@ textarea {
 
 .spinner_jquery{
     width: 2rem;
+
+/* USER PROFILE */
+.user_info{
+    font-weight: bold;
+}
+
+.user_info img{
+    float:left;
+    margin-right:10rem;
+    margin-bottom:5rem;
+}
+
+.user_info .user_name label{
+    display: inline-block;
+    font-size: 25px;
+
 }

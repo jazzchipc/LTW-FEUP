@@ -59,10 +59,11 @@
 
       <div class="menu" >
         <ul>
-          <li>Home</li>
-          <li>About me</li>
-          <li>Restaurants</li>
+          <li><a href="/index.php" id="home">Home</a></li>
+          <li><a href="/views/restaurants_index.php">Restaurants</a></li>
+          <li><a href="/show_reviews.php">Reviews</a></li>
         </ul>
+
         
       </div>
 
@@ -73,6 +74,12 @@
       
 
     </header>
+
+    <flex-box>
+
+    <left-margin>
+      
+    </left-margin>
 
     <content>
     
