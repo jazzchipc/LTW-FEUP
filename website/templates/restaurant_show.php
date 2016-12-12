@@ -13,5 +13,8 @@
         <label><h3>Description</h3><label>
         <?= $restaurant['description']; ?>
     </div>
+
+    <br>
+    <a href="/views/restaurant_reviews.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">Reviews</a>
   
 </section>
