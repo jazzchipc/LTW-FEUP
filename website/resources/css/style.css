@@ -273,12 +273,3 @@ textarea {
 .spinner_jquery{
     width: 2rem;
 }
-
-.user_form {
-    text-align: center;
-}
-
-.user_form * {
-    display: inline-block;
-    text-align: center;
-}
