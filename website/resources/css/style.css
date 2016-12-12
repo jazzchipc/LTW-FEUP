@@ -12,11 +12,20 @@
 html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    background-image: url("/resources/img/restaurant.png");
+}
+
+body{
+    
 }
 
 content > * {
-    padding: 0 2rem;
-    margin: 1rem 0;
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
+    margin-bottom: -10%;  
+    position: fixed;
+    background: white;
 }
 
 h1 {
@@ -135,7 +144,7 @@ header a:hover{
     color: #cc8200;
 }
 
-header .menu ul li:hover{
+header .menu ul li a:hover{
     color: #cc8200;
 }
 
@@ -217,7 +226,11 @@ span.stars span {
 /* FOOTER */
 
 footer{
-    margin: 2rem;
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
+    position: fixed;
+    bottom: 2rem;  
     font-size: 0.8rem;
     text-align: center;
 }
@@ -261,3 +274,19 @@ textarea {
     height: 3rem;
 }
 
+
+/* USER PROFILE */
+.user_info{
+    font-weight: bold;
+}
+
+.user_info img{
+    float:left;
+    margin-right:10rem;
+    margin-bottom:5rem;
+}
+
+.user_info .user_name label{
+    display: inline-block;
+    font-size: 25px;
+}

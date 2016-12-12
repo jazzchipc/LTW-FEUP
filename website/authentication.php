@@ -15,9 +15,9 @@
 
     if($USER === false){
     ?>
-        <script> 
+        <script>
             alert("User does not exist.");
-            
+            window.location.href = "/login.php";
         </script>
         
     <?php
