@@ -9,23 +9,41 @@
 
 /* GENERAL SETTINGS */
 
+
+
 html{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    background-image: url("/resources/img/restaurant.png");
 }
 
-body{
-    
+left-margin{
+    background-color: #ffeccc;
+    flex: 1 6 15%;
+    order: 1;
+    height:100vh;
 }
 
-content > * {
-    width: 75%;
-    left: 50%;
-    margin-left: -37.5%;
-    margin-bottom: -10%;  
-    position: fixed;
-    background: white;
+left-margin img{
+    height: auto;
+}
+
+right-margin{
+    background-color: #ffeccc;
+    flex: 1 6 15%;
+    order: 3;
+    height:100vh;
+}
+
+flex-box{
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+content{
+    margin: 1rem; 
+    width: 50%;
+    flex: 3 1 70%;
+    order: 2;
 }
 
 h1 {
@@ -37,7 +55,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-style: italic;
 }
 
 input{
@@ -163,10 +182,12 @@ header .menu ul li a{
     position: absolute;
     bottom: 0.5rem;
     right: 1rem; 
+    box-sizing: border-box;
 }
 
 @media only screen and (max-width: 800px) {
     #search_box {
+        margin: 1rem 0 0 0;
         position: static;
     }
 }
@@ -235,6 +256,8 @@ footer{
     text-align: center;
 }
 
+
+
 footer h1{
     font-size: 0.8rem;
     font-weight: bold;
@@ -269,14 +292,28 @@ input[type=submit]:hover{
 
 textarea {
     padding: 0.5rem;
+    margin: 0 1rem 0 0;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    height: 3rem;
+    max-width: 100%;
+    height: 6rem;
+    box-sizing: border-box;  
 }
 
 
+/* SPINNERS */
+
+#restaurant_information > div > span{
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.spinner_jquery{
+    width: 2rem;
+}
+
 /* USER PROFILE */
-.user_info{
+.user_info {
     font-weight: bold;
 }
 
@@ -289,4 +326,14 @@ textarea {
 .user_info .user_name label{
     display: inline-block;
     font-size: 25px;
+
+}
+
+/* RESTAURANTS */
+
+section.restaurant_info {
+    border: solid;
+    border-width: 0.1rem;
+    padding: 1rem; 
+    margin: 1rem 0;
 }

@@ -61,7 +61,7 @@
         <ul>
           <li><a href="/index.php" id="home">Home</a></li>
           <li><a href="/views/restaurants_index.php">Restaurants</a></li>
-          <li><a href="/show_reviews.php">Reviews</a></li>
+          <li><a href="/views/reviews_show_recent.php">Reviews</a></li>
         </ul>
 
         
@@ -74,6 +74,12 @@
       
 
     </header>
+
+    <flex-box>
+
+    <left-margin>
+      
+    </left-margin>
 
     <content>
     
