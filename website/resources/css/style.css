@@ -118,6 +118,9 @@ header #title{
     text-decoration: none;
     color:#fed85d;
     padding-top: 2rem;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
+    
 }
 
 
@@ -130,14 +133,13 @@ header h1{
 /* Login */
 header .login{
     display: table;
-    font-size: 1rem;
+    font-size: 17px;
+    margin-right: 0.5rem;
     margin-left:auto; 
-    margin-right:0;
     padding-top:1rem;
 }
 
 header .login a {
-    margin: 0;
     text-decoration: none;
 }
 
@@ -161,6 +163,7 @@ header .menu {
     margin: 1rem 0 0;
     padding-top: 2rem;
     padding-bottom:1rem;
+    font-size: 20px;
 }
 
 header .menu ul li{
@@ -378,8 +381,6 @@ textarea {
 }
 
 .user_information  .ui-accordion-header {
-  text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
-  text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
   border-right: 2px solid rgba(0, 0, 0, .2);
   border-left: 2px solid rgba(0, 0, 0, .2);
   border-bottom: 2px solid rgba(0, 0, 0, .2);
@@ -424,7 +425,6 @@ textarea {
 
 
 
-
 /* RESTAURANTS */
 
 section.restaurant_info {
@@ -434,6 +434,16 @@ section.restaurant_info {
     margin: 1rem 0;
 }
 
+.restaurant_info {
+    border-bottom: solid;
+    border-width: 0.1rem;
+    padding-top:0rem;
+    padding-bottom:3rem;
+}
+
+.restaurant_info:last-child {
+    border-width: 0px;
+}
 
 
 

@@ -40,11 +40,26 @@
     <div class="user_information">
         <label>Restaurants</label>
         <div>
-            <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_restaurants.php'); ?>
+            <?php
+            if (count($restaurants) > 0){
+                include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_restaurants.php'); 
+            }
+            else{
+                ?>No restaurants to show<?php
+            }
+            ?>
         </div>
         <label>Reviews</label>
         <div>
-             <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_reviews.php'); ?>
+            <?php 
+            if (count($reviews) > 0){
+                include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_reviews.php'); 
+            }
+            else{
+                ?>No reviews to show<?php
+            }
+            ?>
+             
         </div>
     </div>
 
