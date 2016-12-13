@@ -76,6 +76,14 @@
         $stmt->execute(array($user_id));
         return $stmt->fetch();
     }
+
+    function isReviewer($dbh, $user_id){
+        $stmt = $dbh->prepare('SELECT *
+                                FROM Reviewer
+                                WHERE Reviewer.reviewer_id = ?');
+        $stmt->execute(array($user_id));
+        return $stmt->fetch();
+    }
     
 
 ?>

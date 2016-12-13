@@ -16,6 +16,9 @@
 //
 // http://stackoverflow.com/questions/595358/how-can-i-execute-a-php-function-in-a-form-action
 
+include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
+include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
+
 function addReview($dbh, $title, $score, $post, $restaurant_id, $reviewer_id)
 {
     try
@@ -24,6 +27,12 @@ function addReview($dbh, $title, $score, $post, $restaurant_id, $reviewer_id)
         $stmt->execute(array($title, $post, $score));
 
         $review_id = intval($dbh->lastInsertId()); 
+
+        $reviewer = isReviewer($dbh, $reviewer_id);
+        if($reviewer === false){
+            $stmt = $dbh->prepare('INSERT INTO Reviewer (reviewer_id) VALUES (?)');
+            $stmt->execute(array($reviewer_id));
+        }
 
         $stmt = $dbh->prepare('INSERT INTO Restaurant_Review values (?, ?, ?)');
         $stmt->execute(array($review_id, $reviewer_id, $restaurant_id));
@@ -59,6 +68,30 @@ function getAllReviews($dbh)
         $stmt = $dbh->prepare('SELECT * FROM Review');
         $stmt->execute();  
 
+        $reviews = $stmt->fetchAll();
+    } 
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
+
+    return $reviews;
+}
+
+
+function getReviewsById($dbh, $id){
+    
+    try{
+        $stmt = $dbh->prepare ('SELECT * 
+                                FROM Review
+                                INNER JOIN Restaurant_Review
+                                ON Restaurant_Review.review_id = Review.review_id
+                                INNER JOIN Reviewer
+                                ON Reviewer.reviewer_id = Restaurant_Review.reviewer_id
+                                INNER JOIN User
+                                ON User.user_id = Reviewer.reviewer_id
+                                WHERE User.user_id = ?');
+        $stmt->execute(array($id));  
         $reviews = $stmt->fetchAll();
     } 
     catch (PDOException $e) 

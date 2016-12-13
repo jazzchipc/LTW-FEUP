@@ -3,6 +3,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');  
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/restaurant.php');
+    include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
 
     try{
 
@@ -17,6 +18,8 @@
         }
         if ($user === false) die("No User");
         $restaurants = getRestaurantsByOwner($dbh, $user['user_name']);
+
+        $reviews = getReviewsById($dbh, $user['user_id']);
 
     }
     catch(PDOException $e){
@@ -41,7 +44,7 @@
         </div>
         <label>Reviews</label>
         <div>
-            <p>Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna. </p>
+             <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_reviews.php'); ?>
         </div>
     </div>
 
