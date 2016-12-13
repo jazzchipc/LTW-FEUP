@@ -446,14 +446,18 @@ section.restaurant_info {
 }
 
 .restaurant_info_short div{
-    margin: 1.5rem 0;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-.restaurant_info_short img{
+.restaurant_info_short .restaurant_evaluation{
+    margin-left: 36%;
+}
+
+.restaurant_info_short .restaurant_photo{
     float: left;
-     margin-right: 3rem;
+    margin-right: 3rem;
 }
-
 
 .restaurant_info_short:last-child {
     border-width: 0px;
