@@ -37,7 +37,7 @@
     <div class="user_information">
         <label>Restaurants</label>
         <div>
-            <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_restaurants.php'); ?>
+            <?php include ($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show_several.php'); ?>
         </div>
         <label>Reviews</label>
         <div>

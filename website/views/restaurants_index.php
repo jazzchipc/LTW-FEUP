@@ -15,10 +15,10 @@ try {
     // public bool PDOStatement::execute ([ array $input_parameters ] ) 
     // EXECUTES THE PREPARED STATEMENT. The array of input parameters is optional and restructs the solution
     $stmt->execute();  
+    $restaurants = $stmt->fetchAll();
 
-    while ($restaurant = $stmt->fetch()) {
-      include($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show.php');
-    }
+    
+    include($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show_several.php');
 
     /*** var_dump vs echo vs print_r ***/
     /* 

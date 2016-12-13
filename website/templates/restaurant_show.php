@@ -1,15 +1,5 @@
 <section class="restaurant_info">
 
-    <!-- Star rating system -->
-    <script src="/resources/js/star-rating.js"></script>
-    <script>
-        $(function() {
-        $('span.stars').stars();
-        });
-    </script>
-
-    <br>
-
     <div class="restaurant_name">
         <label><h3>Name</h3><label>
         <h2><?= $restaurant['restaurant_name']; ?></h2>

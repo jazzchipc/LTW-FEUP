@@ -7,5 +7,7 @@
 
 <?php
 
+  include('templates/restaurant_show_best.php');
+
   include('templates/footer.php');
 ?>
