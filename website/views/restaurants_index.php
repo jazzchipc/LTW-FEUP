@@ -10,7 +10,7 @@ include('../database/connection.php');
 
 try {
     // ONLY prepares
-    $stmt = $dbh->prepare('SELECT * FROM Restaurant');
+    $stmt = $dbh->prepare('SELECT * FROM Restaurant ORDER BY restaurant_name');
    
     // public bool PDOStatement::execute ([ array $input_parameters ] ) 
     // EXECUTES THE PREPARED STATEMENT. The array of input parameters is optional and restructs the solution
