@@ -23,8 +23,20 @@
     </div>
 
     <br>
+    <?php if(!isset($restaurant['average_score']))
+    {
+    ?>
+        <h3>No reviews yet</h3>
+    <?php
+    }
+    else
+    {
+    ?>
+        <span class="stars"><?=$restaurant['average_score']?></span>
+    <?php
+    }
+    ?>
 
-    <span class="stars"><?=$restaurant['average_score']?></span>
     
     <br>
     <a href="/views/restaurant_reviews.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">Reviews</a>

@@ -1,18 +1,18 @@
 <?php
 
-include('templates/header.php');
+include('/templates/header.php');
 ?>
 
 <h1>Replies</h1>
  
 <?php
 
-include_once('database/connection.php');
-include_once('database/reply.php');
+include_once('/database/connection.php');
+include_once('/database/reply.php');
 
 $replies = getAllReviewReplies($dbh, $_GET['review_id']);
 
-include('templates/reply_show.php');
+include('/templates/reply_show.php');
 
 ?>
 
@@ -21,6 +21,6 @@ include('templates/reply_show.php');
 
 <?php
 
-include('templates/footer.php');
+include('/templates/footer.php');
 
 ?>

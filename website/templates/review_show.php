@@ -15,7 +15,7 @@
       <span class="stars"><?=$review['score']?></span>
       <p><?=$review['comment']?></p>
       <h6>On: <?=$review['date']?></h6>
-      <a href="show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
+      <a href="/show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
     </div>
   </div>
   <?php } ?>
