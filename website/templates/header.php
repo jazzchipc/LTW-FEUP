@@ -1,5 +1,6 @@
 <?php
   session_start();
+  $_SERVER['DOCUMENT_ROOT'] = $_SERVER['DOCUMENT_ROOT'].""; // change to match directory of website
 ?>
 
 <!DOCTYPE html>

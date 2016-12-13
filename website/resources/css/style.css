@@ -17,18 +17,14 @@ html{
 }
 
 left-margin{
-    background-color: #ffeccc;
+    background: url("/resources/img/left-margin.jpg");
     flex: 1 6 15%;
     order: 1;
     min-height: 100%;
 }
 
-left-margin img{
-    height: auto;
-}
-
 right-margin{
-    background-color: #ffeccc;
+    background: url("/resources/img/right-margin.jpg");
     flex: 1 6 15%;
     order: 3;
     min-height: 100%;
