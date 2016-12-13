@@ -215,7 +215,7 @@ header .menu ul li a{
     margin: 1rem 0;
 }
 
-.restaurant_review {
+.restaurant_review, .reply {
     margin: 0 0 3rem 0;
     padding: 0 1rem;
     border-left: solid;
@@ -225,6 +225,7 @@ header .menu ul li a{
     font-weight: bold;
     margin: 0 0 1rem;
 }
+
 
 span.stars, span.stars span {
     display: block;
@@ -292,7 +293,6 @@ footer{
     font-size: 0.8rem;
     text-align: center;
 }
-
 
 
 footer h1{

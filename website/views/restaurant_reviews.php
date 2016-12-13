@@ -20,6 +20,14 @@
     }
 ?>
 
+    <!-- Star rating system -->
+    <script src="/resources/js/star-rating.js"></script>
+    <script>
+        $(function() {
+        $('span.stars').stars();
+        });
+    </script>
+
 
 <?php
 
