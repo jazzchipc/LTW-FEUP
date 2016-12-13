@@ -2,7 +2,7 @@
 
 <div class="user_info">
 
-    <form action="/edit_user_info.php" method="post">
+    <form action="/views/edit_user_info.php" method="post">
         <img src="<?= $user['photo_url'] ?>" alt="Profile Photo" width=200 height=200>
 
         <div class="user_name">
