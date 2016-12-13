@@ -2,29 +2,46 @@ var goodColor = "#66cc66";
 var badColor = "#ff6666";
 var white ="#ffffff";
 
-var old_password = old;
+
 var confirm_old_password = document.getElementById('old_password');
 var new_password = document.getElementById('new_password');
 var confirm_password = document.getElementById('confirm_password');
 var message = document.getElementById('confirmMessage');
 
 function validateOldPassword(){
-    
-    if(old_password == confirm_old_password.value){
 
-        confirm_old_password.style.backgroundColor = goodColor;
-        return true;
-    }
-    else if(confirm_old_password.value.length == 0){
-        confirm_old_password.style.backgroundColor = white;
-        return true;
-    }
-    else{
+    var old = $("#old_password").val();
 
-        confirm_old_password.style.backgroundColor = badColor;
-        return false;
-        
-    }
+    return $.ajax({
+        type: "POST",
+        url: "/actions/password_verification.php",
+        data:   {
+                    action : 'verifyPasswordWithHash', 
+                    user_id : user_id, 
+                    password : old
+                },
+        success: function(response){
+            if(response == "true")
+            {
+                confirm_old_password.style.backgroundColor = goodColor;
+                return true;
+            }
+            else if(confirm_old_password.value.length == 0)
+            {
+                confirm_old_password.style.backgroundColor = white;
+                return false;
+            }
+            else
+            {
+                confirm_old_password.style.backgroundColor = badColor;
+                return false;
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+
 } 
 
 function validateNewPassword(){

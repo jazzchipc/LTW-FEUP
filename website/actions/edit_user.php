@@ -32,11 +32,14 @@
     }
 
     if ($user['password'] != $password && strlen($password) > 0){
+        
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
         $stmt = $dbh->prepare('UPDATE User
                                 SET password = ?
                                 WHERE User.user_name = ?');
         
-        $stmt->execute(array($password, $username));
+        $stmt->execute(array($hashedPassword , $username));
 
         echo '<script> alert("Updated user password") </script>';
     }

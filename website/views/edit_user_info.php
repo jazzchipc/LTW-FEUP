@@ -64,7 +64,11 @@
     </form>
 </div>
 
-<script type="text/javascript">var old = "<?=$old_password?>" </script>
+<script type="text/javascript">
+
+    var user_id = "<?=$_SESSION['user_id'];?>";
+
+</script>
 <script src="/resources/js/confirm_passwords.js"> </script>
 
 

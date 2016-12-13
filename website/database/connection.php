@@ -1,5 +1,3 @@
-<!-- Establish connection to database -->
-
 <?php
   try {
     $dbh = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/database/sqlite/db');
