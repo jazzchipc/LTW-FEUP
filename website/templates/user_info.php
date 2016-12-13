@@ -28,7 +28,7 @@
 
     <!-- SESSION USER CAN EDIT ITS OWN PROFILE  -->
     <script>
-        var session_user = "<?php echo $_SESSION['user_name']; ?>";
+        var session_user = "<?php if(isset($_SESSION['user_name'])) {echo $_SESSION['user_name'];} else {echo "";} ?>";
         var user = "<?php echo $user['user_name']; ?>";
         if (session_user == user){ 
             document.getElementById("edit").style.visibility="visible";

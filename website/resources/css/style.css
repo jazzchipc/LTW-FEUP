@@ -368,7 +368,7 @@ textarea {
   background-color: #fa9300;
   background-image: -moz-linear-gradient(top,  #fa9300 0%, #dc621e 100%); /* FF3.6+ */
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fa9300), color-stop(100%,#dc621e)); /* Chrome,Safari4+ */
-  background-image: -webkit-linear-gradient(top,  #fa9300 0%,#dc621e 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -webkit-linear-gradient(top, #fa9300 0%,#dc621e 100%); /* Chrome10+,Safari5.1+ */
   background-image: -o-linear-gradient(top,  #fa9300 0%,#dc621e 100%); /* Opera 11.10+ */
   background-image: -ms-linear-gradient(top,  #fa9300 0%,#dc621e 100%); /* IE10+ */
   background-image: linear-gradient(to bottom,  #fa9300 0%,#dc621e 100%); /* W3C */
