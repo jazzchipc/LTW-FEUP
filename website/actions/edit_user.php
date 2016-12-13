@@ -8,7 +8,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
 
     if ($_FILES['photo']['size'] != 0){
-        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file.php');
+        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file_user.php');
         $photo = '/resources/img/uploads/users/'. $photo_name;
     }
     

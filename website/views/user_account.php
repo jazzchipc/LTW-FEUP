@@ -17,6 +17,7 @@
             $user = getUserById($dbh, $id);
         }
         if ($user === false) die("No User");
+        
         $restaurants = getRestaurantsByOwner($dbh, $user['user_name']);
 
         $reviews = getReviewsById($dbh, $user['user_id']);

@@ -70,7 +70,7 @@
 
 </script>
 
-<form action ="/actions/save_restaurant.php" method ="post" id ="restaurant_form" enctype="multipart/form-data">
+<form enctype="multipart/form-data" action ="/actions/save_restaurant.php" method ="post" id ="restaurant_form" enctype="multipart/form-data">
 
     <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>" />
 
@@ -81,14 +81,17 @@
         <div><label>Description</label>
         <textarea name="restaurant_description" required></textarea></div>
 
-        <div><label>Image</label>
-        <input type="file" name="restaurant_image"></input></div>
+        <div>
+            <label>Image</label>
+            <input type="hidden" name="MAX_FILE_SIZE" value="500000" />
+            <input name="restaurant_photo" id="restaurant_photo" type="file" accept="image/*" required></input>
+        </div>
 
         <div>
             <label for="spinner">Open time:</label>
-            <input class="spinner_jquery" id="spinner_hours_open" name="hours">h<input id="spinner_minutes_open"  class="spinner_jquery" name="minutes">min
+            <input class="spinner_jquery" id="spinner_hours_open" name="open_hours">h<input id="spinner_minutes_open"  class="spinner_jquery" name="open_minutes">min
             <label for="spinner">Close time:</label>
-            <input class="spinner_jquery" id="spinner_hours_close" name="hours">h<input id="spinner_minutes_close"  class="spinner_jquery" name="minutes">min
+            <input class="spinner_jquery" id="spinner_hours_close" name="close_hours">h<input id="spinner_minutes_close"  class="spinner_jquery" name="close_minutes">min
         </div>
         
     </div>

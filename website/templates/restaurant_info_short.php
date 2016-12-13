@@ -1,4 +1,4 @@
-<div class="restaurant_info">
+<div class="restaurant_info_short">
 
     <!-- Star rating system -->
     <script src="/resources/js/star-rating.js"></script>
@@ -7,26 +7,20 @@
         $('span.stars').stars();
         });
     </script>
-
-    <br>
+    <img src="<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=200 height=200>
 
     <div class="restaurant_name">
         <label><h3>Name</h3><label>
         <h2><?= $restaurant['restaurant_name']; ?></h2>
     </div>
 
-    <br>
-
     <div class="restaurant_description">
         <label><h3>Description</h3><label>
         <?= $restaurant['description']; ?>
     </div>
 
-    <br>
-
     <span class="stars"><?=$restaurant['average_score']?></span>
     
-    <br>
-    <a href="/views/restaurant_reviews.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">Reviews</a>
+    <a href="/templates/restaurant_info.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
   
 </div>

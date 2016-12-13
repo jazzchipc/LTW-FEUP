@@ -44,7 +44,9 @@ CREATE TABLE IF NOT EXISTS Restaurant(
     restaurant_id integer PRIMARY KEY,
     restaurant_name varchar collate nocase NOT NULL,
     description varchar NOT NULL,
-    photo_url varchar,
+    photo_url varchar NOT NULL,
+    opening_time text,
+    closing_time text,
     average_score real);
 
 CREATE TABLE IF NOT EXISTS Reply(
