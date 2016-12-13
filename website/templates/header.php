@@ -67,8 +67,8 @@
         
       </div>
 
-       <form action="/show_users.php" method="post">
-              <input id="search_box" name="username" type="text" placeholder="Search..">
+      <form action="/actions/search.php" method="post">
+              <input id="search_box" name="toSearch" type="text" placeholder="Search..">
       </form>
       
       
