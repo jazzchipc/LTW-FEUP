@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS Restaurant_Owners(
 CREATE TABLE IF NOT EXISTS Restaurant(
     restaurant_id integer PRIMARY KEY,
     restaurant_name varchar collate nocase NOT NULL,
-    description varchar,
+    description varchar NOT NULL,
     photo_url varchar,
     average_score real);
 

@@ -68,6 +68,14 @@
         $stmt->execute(array($restaurant_name));
         return $stmt->fetchall();
     }
+
+    function isOwner($dbh, $user_id){
+        $stmt = $dbh->prepare('SELECT *
+                                FROM Owner
+                                WHERE Owner.owner_id = ?');
+        $stmt->execute(array($user_id));
+        return $stmt->fetch();
+    }
     
 
 ?>

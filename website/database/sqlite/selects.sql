@@ -15,7 +15,7 @@ INNER JOIN Restaurant_Owners
 ON Restaurant_Owners.owner_id = Owner.owner_id
 INNER JOIN Restaurant
 ON Restaurant.restaurant_id = Restaurant_Owners.restaurant_id
-WHERE Restaurant.restaurant_name = 'Rest1';
+WHERE Restaurant.restaurant_name = 'Asiatico';
 
 
 /* Get Restaurants of Owner */
@@ -27,6 +27,14 @@ INNER JOIN Owner
 ON Restaurant_Owners.owner_id = Owner.owner_id
 INNER JOIN User
 ON User.user_id = Owner.owner_id
-WHERE User.user_name ='Catarina';
+WHERE User.user_name ='cat';
+
+SELECT Owner.owner_id
+FROM Owner
+INNER JOIN Restaurant_Owners
+ON Restaurant_Owners.owner_id = Owner.owner_id
+WHERE Restaurant_Owners.restaurant_id=3;
 
 
+SELECT *
+FROM Restaurant_Owners;

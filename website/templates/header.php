@@ -35,7 +35,7 @@
             {
             ?>
 
-              <li><a href="/templates/user_account.php?id=<?=$_SESSION['user_id']?>">Hello, <?=$_SESSION['user_name']?></li>
+              <li><a href="/views/user_account.php?id=<?=$_SESSION['user_id']?>">Hello, <?=$_SESSION['user_name']?></li>
               <li><a href="/logout.php">Logout</a></li>
 
             <?php
