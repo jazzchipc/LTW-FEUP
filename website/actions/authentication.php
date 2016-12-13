@@ -17,7 +17,7 @@
     ?>
         <script>
             alert("User does not exist.");
-            window.location.href = "/login.php";
+            window.location.href = "/views/login.php";
         </script>
         
     <?php
@@ -46,7 +46,7 @@
         ?>
             <script> 
                 alert("Invalid username or password!");
-                window.location.href = "/login.php";
+                window.location.href = "/views/login.php";
             </script>
         <?php
         }

@@ -2,7 +2,7 @@
 
 <div class="user_info_short">
 
-    <form action="/templates/user_account.php" method="post">
+    <form action="/views/user_account.php" method="post">
 
         <img src="<?= $user['photo_url'] ?>" alt="Profile Photo" width=200 height=200>
 
