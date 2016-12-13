@@ -16,15 +16,16 @@
 
   <div class="restaurant_review">
 
-    <h3><?=$review['title']?></h3>
+    <h3><?=$review['title']?></h3> 
+    <p><?=$review['comment']?></p>
+    <br>
     <div>
       <span class="stars"><?=$review['score']?></span>
-      <br>  
-      <p><?=$review['comment']?></p>
       <br>
       By: <?=$reviewer_name?>
       <br>
       <h6>On: <?=$review['date']?></h6>
+      <br>
       <a href="/show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
     </div>
   </div>

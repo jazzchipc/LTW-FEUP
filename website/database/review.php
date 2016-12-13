@@ -73,7 +73,7 @@ function getLatestReviews($dbh, $numberOfReviews)
 {
     try 
     {
-        $stmt = $dbh->prepare('SELECT * FROM Review ORDER BY date LIMIT ?');
+        $stmt = $dbh->prepare('SELECT * FROM Review ORDER BY date DESC LIMIT ?');
         $stmt->execute(array($numberOfReviews));  
 
         $reviews = $stmt->fetchAll();
