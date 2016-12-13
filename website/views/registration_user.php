@@ -29,13 +29,13 @@
         <input name="username" type="text" autocomplete="off" required>
 
         <label>First name</label>
-        <input name="firstname" type="text" required>
+        <input name="firstname" type="text" autocomplete="off" required>
 
         <label>Last name</label>
-        <input name="lastname" type="text" required>
+        <input name="lastname" type="text" autocomplete="off" required>
 
         <label>Email</label>
-        <input name="email" type="email" required>
+        <input name="email" type="email" autocomplete="off" required>
 
         <label>Photo</label>
         <input type="hidden" name="MAX_FILE_SIZE" value="500000" />

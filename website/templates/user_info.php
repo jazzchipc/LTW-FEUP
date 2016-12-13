@@ -1,4 +1,5 @@
 
+
 <div class="user_info">
 
     <form action="/edit_user_info.php" method="post">
@@ -21,9 +22,11 @@
         <input name="password" type="hidden" value="<?= $user['password'] ?>" readonly="true">
 
         <input id="edit" type="submit" value="Edit" style="visibility:hidden">
+
         
     </form>
 
+    <!-- SESSION USER CAN EDIT ITS OWN PROFILE  -->
     <script>
         var session_user = "<?php echo $_SESSION['user_name']; ?>";
         var user = "<?php echo $user['user_name']; ?>";

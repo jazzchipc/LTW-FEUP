@@ -12,13 +12,20 @@
     }
 
     function getRestaurantsByName($dbh, $name){
-        $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name FROM Restaurant WHERE Restaurant.restaurant_name = ?');
+        $stmt = $dbh->prepare('SELECT * FROM Restaurant WHERE Restaurant.restaurant_name = ?');
         $stmt->execute(array($name)); //$stmt->execute(array($_GET['name']));
+        return $stmt->fetchall();
+    }
+
+     function getRestaurantById($dbh, $id){
+        $stmt = $dbh->prepare('SELECT * FROM Restaurant WHERE Restaurant.restaurant_id = ?');
+        $stmt->execute(array($id)); //$stmt->execute(array($_GET['name']));
         return $stmt->fetch();
     }
 
+
     function getRestaurantsByOwner($dbh, $user_name){
-        $stmt = $dbh->prepare('SELECT Restaurant.restaurant_name
+        $stmt = $dbh->prepare('SELECT *
                                FROM Restaurant
                                INNER JOIN Restaurant_Owners
                                ON Restaurant_Owners.restaurant_id = Restaurant.restaurant_id

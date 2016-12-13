@@ -314,13 +314,21 @@ textarea {
 
 /* USER PROFILE */
 .user_info {
+    margin-top: 3rem;
     font-weight: bold;
 }
 
 .user_info img{
     float:left;
-    margin-right:10rem;
+    margin-right:5rem;
+    margin-left:5rem;
     margin-bottom:5rem;
+    padding: 5px;
+    box-shadow: inset 0 0 0 5px saddlebrown;
+}
+
+.user_info img padding{
+    color:blue;
 }
 
 .user_info .user_name label{
@@ -328,6 +336,41 @@ textarea {
     font-size: 25px;
 
 }
+
+/* USER PROFILE SHORT */
+.user_info_short .user_name{
+    font-weight: bold;
+}
+
+.user_info_short .user_name label{
+    display: inline-block;
+    font-size: 15px;
+}
+
+.user_info_short{
+    margin-bottom: 5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px outset black;
+}
+
+.user_info_short:last-child{
+    border-bottom: 1px  white;
+}
+
+.user_info_short img{
+    margin-right: 2rem;
+    float:left;
+    height: 100px;
+    width: 100px;
+    padding: 5px;
+    box-shadow: inset 0 0 0 5px saddlebrown;
+}
+
+
+
 
 /* RESTAURANTS */
 
@@ -337,3 +380,4 @@ section.restaurant_info {
     padding: 1rem; 
     margin: 1rem 0;
 }
+
