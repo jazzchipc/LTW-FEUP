@@ -42,11 +42,7 @@
     } 
 
     // Check if $uploadOk is set to 0 by an error
-    if ($uploadOk == 0) {
-        echo '<script> alert("Sorry, your file was not uploaded.") </script>';
-    // if everything is ok, try to upload file
-    } 
-    else {
+    if ($uploadOk == 1) {
         if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
             echo '<script> alert("The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.") </script>';
         } else {

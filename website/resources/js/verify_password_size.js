@@ -8,15 +8,14 @@ function verifyPasswordSize(){
     var password = document.getElementById('password');
     var message = document.getElementById('confirmMessage');
 
-    console.log(password.value.length);
-
     if(password.value.length >= 6 && password.value.length <= 20){
 
         password.style.backgroundColor = goodColor;
         message.innerHTML = "";
         return true;
     }else if(password.value.length == 0){
-        
+        message.style.color = badColor;
+        message.innerHTML = "Password field is empty";
         return false;
     }
     else{
