@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS Review(
     title varchar,
     comment varchar,
     score integer NOT NULL,
+    reviewer_id integer,
     date text,
     CHECK (score > 0 AND score <= 10)
 );
@@ -57,6 +58,7 @@ CREATE TABLE IF NOT EXISTS Reply(
     PRIMARY KEY(reply_id),
     FOREIGN KEY(user_id) REFERENCES User(user_id)
 );
+
 CREATE TABLE IF NOT EXISTS Owner(
     owner_id integer PRIMARY KEY,
     FOREIGN KEY (owner_id) REFERENCES User(user_id)

@@ -5,9 +5,11 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/restaurant.php');
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
+
+    $restaurant_name = getRestaurantById($dbh, $_GET['restaurant_id'])['restaurant_name'];
 ?>
 
-<h1>Reviews</h1>
+<h1>Reviews of '<?=$restaurant_name?>'</h1>
 
 <?php 
     if(isset($_SESSION['authenticated']))

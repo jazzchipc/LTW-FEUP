@@ -12,7 +12,7 @@
 
     try 
     {
-        addReview($dbh, $_POST['title'],  $intScore , $_POST['  '], $intRestaurantId, $intReviewerId);
+        addReview($dbh, $_POST['title'],  $intScore , $_POST['review'], $intRestaurantId, $intReviewerId);
     } 
     catch (PDOException $e) 
     {

@@ -69,4 +69,41 @@ function getAllReviews($dbh)
     return $reviews;
 }
 
+function getLatestReviews($dbh, $numberOfReviews)
+{
+    try 
+    {
+        $stmt = $dbh->prepare('SELECT * FROM Review ORDER BY date LIMIT ?');
+        $stmt->execute(array($numberOfReviews));  
+
+        $reviews = $stmt->fetchAll();
+    } 
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
+
+    return $reviews;
+}
+
+function getReviewer($dbh, $review_id)
+{
+    try 
+    {
+        $stmt = $dbh->prepare('SELECT reviewer_id FROM Restaurant_Review INNER JOIN Review 
+                                ON Review.review_id = Restaurant_Review.review_id 
+                                WHERE Review.review_id = ?');
+
+        $stmt->execute(array($review_id));  
+
+        $reviewer_id = $stmt->fetch()['reviewer_id'];
+    } 
+    catch (PDOException $e) 
+    {
+        echo $e->getMessage();
+    }
+
+    return $reviewer_id;
+}
+
 ?>

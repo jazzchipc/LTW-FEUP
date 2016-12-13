@@ -59,6 +59,11 @@ h3 {
     font-style: italic;
 }
 
+h6 {
+    font-size: 0.6rem;
+    font-style: italic;
+}
+
 input{
     padding: 0.3rem 0.5rem;
     margin: 0.2rem;
