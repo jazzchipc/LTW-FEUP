@@ -4,6 +4,7 @@ include('/templates/header.php');
 ?>
 
 <h1>Replies</h1>
+<br>
  
 <?php
 
@@ -15,9 +16,8 @@ $replies = getAllReviewReplies($dbh, $_GET['review_id']);
 include('/templates/reply_show.php');
 
 ?>
-
+    <br>
     <a href="/write_reply.php/?review_id=<?=$_GET['review_id']?>"> <p>Reply</p> </a>
-    <a href="/show_reviews.php"> <p>Back to reviews</p> </a>
 
 <?php
 

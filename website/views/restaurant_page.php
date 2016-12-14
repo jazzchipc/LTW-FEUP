@@ -5,7 +5,6 @@
     include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
 
     try{
-
         $id = $_GET['restaurant_id'];
         $restaurant = getRestaurantById($dbh, $id);
 

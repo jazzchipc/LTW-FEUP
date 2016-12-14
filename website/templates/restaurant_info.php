@@ -4,8 +4,7 @@
     <form action="/views/edit_restaurant_info.php" method="post">
         
         <div class="name">
-            <label><?= $restaurant['restaurant_name']?></label>
-            <input name="firstname" type="hidden" value="<?= $user['first_name']?>" readonly="true">      
+            <label><?= $restaurant['restaurant_name']?></label>     
         </div>
         
          <img src="<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=400 height=400>

@@ -48,4 +48,21 @@
         return $stmt->fetchall();
     }
 
+    function getBestRestaurants($dbh, $numberOfRestaurants)
+    {
+        try 
+        {
+            $stmt = $dbh->prepare('SELECT * FROM Restaurant ORDER BY average_score DESC LIMIT ?');
+            $stmt->execute(array($numberOfRestaurants));  
+
+            $restaurants = $stmt->fetchAll();
+        } 
+        catch (PDOException $e) 
+        {
+            echo $e->getMessage();
+        }
+
+        return $restaurants;
+    }
+
 ?>

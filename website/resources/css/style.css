@@ -18,21 +18,17 @@ html{
 
 
 left-margin{
-    background-color: #ffeccc;
+    background: url("/resources/img/left-margin.jpg");
     flex: 1 6 15%;
     order: 1;
-    height:100vh;
-}
-
-left-margin img{
-    height: auto;
+    min-height: 100%;
 }
 
 right-margin{
-    background-color: #ffeccc;
+    background: url("/resources/img/right-margin.jpg");
     flex: 1 6 15%;
     order: 3;
-    height:100vh;
+    min-height: 100%;
 }
 
 flex-box{
@@ -45,6 +41,7 @@ content{
     width: 50%;
     flex: 3 1 70%;
     order: 2;
+    padding-bottom: 1rem;   
 }
 
 h1 {
@@ -57,6 +54,11 @@ h2 {
 
 h3 {
     font-size: 1.2rem;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 0.6rem;
     font-style: italic;
 }
 
@@ -220,14 +222,17 @@ header .menu ul li a{
     margin: 1rem 0;
 }
 
-.restaurant_review {
+.restaurant_review, .reply {
     margin: 0 0 3rem 0;
+    padding: 0 1rem;
+    border-left: solid;
 }
 
 .restaurant_review h3 {
     font-weight: bold;
     margin: 0 0 1rem;
 }
+
 
 span.stars, span.stars span {
     display: block;
@@ -285,15 +290,16 @@ span.stars span {
 /* FOOTER */
 
 footer{
+    display: block;
     width: 75%;
     left: 50%;
     margin-left: -37.5%;
+    margin-top: 3rem;
+    bottom: 0;
     position: relative;
-    bottom: 2rem;  
     font-size: 0.8rem;
     text-align: center;
 }
-
 
 
 footer h1{

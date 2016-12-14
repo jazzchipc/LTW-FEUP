@@ -33,6 +33,6 @@
         die($e->getMessage());
     }
 
-    //header("Location: /views/restaurants_index.php");
+    header("Location: /views/restaurants_index.php");
 
 ?>
