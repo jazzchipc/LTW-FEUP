@@ -29,6 +29,6 @@
         }
         ?>
     </div>
-    <a href="/views/restaurant_page.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
+    <a href="../views/restaurant_page.php?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
   
 </div>

@@ -12,19 +12,19 @@
     if($captcha != $_SESSION['captcha']['code'])
     {
         echo '<script> alert("Bad captcha. Please try again.") </script>';
-        header('refresh:0; url=/views/registration_user.php');
+        header('refresh:0; url=../views/registration_user.php');
         die;
     }
 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
+    include_once('../database/connection.php');
+    include_once('../database/user.php');
 
     if ($_FILES['photo']['size'] != 0){
-        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file_user.php');
-        $photo = '/resources/img/uploads/users/'. $photo_name;
+        include_once('../upload_file_user.php');
+        $photo = '../resources/img/uploads/users/'. $photo_name;
     }
     else{
-        $photo = '/resources/img/uploads/users/user.png';
+        $photo = '../resources/img/uploads/users/user.png';
     }
 
     
@@ -43,7 +43,7 @@
         {
             ini_set('SMTP', 'smtp-mail.outlook.com');
 
-            require $_SERVER['DOCUMENT_ROOT'].'/vendors/php-mailer/PHPMailerAutoload.php';
+            require '../vendors/php-mailer/PHPMailerAutoload.php';
 
             $mail = new PHPMailer;
 
@@ -92,7 +92,7 @@
 
     else{
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:2; url=/views/registration_user.php');
+        header('refresh:2; url=../views/registration_user.php');
     } 
 
 ?>

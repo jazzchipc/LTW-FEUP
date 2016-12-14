@@ -1,7 +1,7 @@
 <?php
 
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/restrict_access.php'); 
+    include('../templates/header.php');
+    include('../templates/restrict_access.php'); 
 
 ?>
 
@@ -70,7 +70,7 @@
 
 </script>
 
-<form enctype="multipart/form-data" action ="/actions/save_restaurant.php" method ="post" id ="restaurant_form" enctype="multipart/form-data">
+<form enctype="multipart/form-data" action ="../actions/save_restaurant.php" method ="post" id ="restaurant_form" enctype="multipart/form-data">
 
     <input type="hidden" name="user_id" value="<?= $_SESSION['user_id']?>" />
 

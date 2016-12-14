@@ -1,11 +1,11 @@
 <?php
-    include('templates/header.php');
-    include_once('database/reply.php');
+    include('../templates/header.php');
+    include_once('../database/reply.php');
 ?>
 
 <h2> Write a reply </h2>
 
-<form action ="/save_reply.php" method ="post" id ="reply_form">
+<form action ="../actions/save_reply.php" method ="post" id ="reply_form">
 
     <!-- Using hidden inputs to send more information on the $_POST variable than what is in the form. -->
     <input type="hidden" name="review_id" value="<?php echo $_GET['review_id']?>" />
@@ -24,5 +24,5 @@
 </form>
 
 <?php
-    include('templates/footer.php');  
+    include('../templates/footer.php');  
 ?>

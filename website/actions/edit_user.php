@@ -4,12 +4,12 @@
     $email = $_POST["email"];
     $password = $_POST["new_password"];
 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
+    include_once('../database/connection.php');
+    include_once('../database/user.php');
 
     if ($_FILES['photo']['size'] != 0){
-        include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file_user.php');
-        $photo = '/resources/img/uploads/users/'. $photo_name;
+        include_once('../upload_file_user.php');
+        $photo = '../resources/img/uploads/users/'. $photo_name;
     }
     
     $user = getUserByName($dbh, $username);

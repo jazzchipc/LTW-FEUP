@@ -1,6 +1,6 @@
 
 <?php 
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); 
+    include('../templates/header.php'); 
 
     $username = $_POST["username"];
     $firstname = $_POST["firstname"];
@@ -13,7 +13,7 @@
 <div class="edit_user_info">
 
     <h1> My Information </h1>
-    <form enctype="multipart/form-data" action="/actions/edit_user.php" method="post">
+    <form enctype="multipart/form-data" action="../actions/edit_user.php" method="post">
 
         <div id="fill">
         <label>Username</label>
@@ -69,9 +69,9 @@
     var user_id = "<?=$_SESSION['user_id'];?>";
 
 </script>
-<script src="/resources/js/confirm_passwords.js"> </script>
+<script src="../resources/js/confirm_passwords.js"> </script>
 
 
 <?php 
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); 
+    include('../templates/footer.php'); 
 ?>

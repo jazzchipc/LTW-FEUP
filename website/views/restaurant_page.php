@@ -1,8 +1,8 @@
 <?php 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/restaurant.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
+    include ('../templates/header.php');
+    include_once('../database/connection.php');
+    include_once('../database/restaurant.php');
+    include_once('../database/review.php');
 
     try{
         $id = $_GET['restaurant_id'];
@@ -18,9 +18,9 @@
         die($e->getMessage());
     }
 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_info.php');
+    include ('../templates/restaurant_info.php');
     ?>
 
 <?php
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
+    include ('../templates/footer.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
+    include_once('../database/connection.php');
+    include_once('../database/user.php');
     if(isset($_POST['action']) && function_exists($_POST['action'])) {
         
         $action = $_POST['action'];

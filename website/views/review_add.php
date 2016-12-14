@@ -1,11 +1,11 @@
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/restrict_access.php');
+    include('../templates/header.php');
+    include('../templates/restrict_access.php');
 ?>
 
 <h1> Write a review </h1>
 
-<form action ="/actions/save_review.php" method ="post" id ="review_form">
+<form action ="../actions/save_review.php" method ="post" id ="review_form">
 
     <input type="hidden" name="restaurant_id" value="<?php echo $_GET['restaurant_id']?>" />
     <input type="hidden" name="reviewer_id" value="<?= $_SESSION['user_id']?>" />
@@ -38,5 +38,5 @@
 </form>
 
 <?php
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');  
+    include('../templates/footer.php');  
 ?>

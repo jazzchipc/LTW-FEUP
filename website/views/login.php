@@ -1,6 +1,6 @@
 <?php 
 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); 
+    include ('../templates/header.php'); 
 
     if(isset($_COOKIE["user_name"])) 
     {
@@ -15,7 +15,7 @@
     {
         if($_SESSION['authenticated'] == true)
         {
-            header('Refresh:0; url= /index.php');
+            header('Refresh:0; url= ../index.php');
             echo '<script language="javascript">';
             echo 'alert("You\'re already logged in")';
             echo '</script>';
@@ -28,7 +28,7 @@
     <div class="Login" >
         <h1>Login</h1>
 
-        <form class ="edit_user_info" action="/actions/authentication.php" method="post">
+        <form class ="edit_user_info" action="../actions/authentication.php" method="post">
 
             <div><label>Username/email</label>
             <input name="username" type="text" value="<?= $suggestedUserName?>" required></div>
@@ -45,4 +45,4 @@
     <?php
     } 
 
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
+    include('../templates/footer.php'); ?>

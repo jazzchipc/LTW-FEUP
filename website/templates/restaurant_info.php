@@ -1,6 +1,6 @@
 
     <!-- Star rating system -->
-<script src="/resources/js/star-rating.js"></script>
+<script src="../resources/js/star-rating.js"></script>
 <script>
         $(function() {
         $('span.stars').stars();
@@ -9,7 +9,7 @@
 
 <div class="restaurant_info">
 
-    <form action="/views/edit_restaurant_info.php" method="post">
+    <form action="../views/edit_restaurant_info.php" method="post">
         
         <div class="name">
             <label><?= $restaurant['restaurant_name']?></label>     
@@ -40,7 +40,7 @@
             ?>
         </div>
 
-        <a href="/views/restaurant_reviews.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">Show Reviews</a>
+        <a href="../views/restaurant_reviews.php?restaurant_id=<?=$restaurant['restaurant_id']?>">Show Reviews</a>
         
     </form>
 

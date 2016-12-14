@@ -1,9 +1,9 @@
 <?php 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/header.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/connection.php');  
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/user.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/restaurant.php');
-    include_once($_SERVER['DOCUMENT_ROOT'].'/database/review.php');
+    include ('../templates/header.php');
+    include_once('../database/connection.php');  
+    include_once('../database/user.php');
+    include_once('../database/restaurant.php');
+    include_once('../database/review.php');
 
     try{
 
@@ -27,7 +27,7 @@
         die($e->getMessage());
     }
 
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/user_info.php');
+    include ('../templates/user_info.php');
     ?>
 
     <script>
@@ -43,7 +43,7 @@
         <div>
             <?php
             if (count($restaurants) > 0){
-                include ($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show_several.php'); 
+                include ('../templates/restaurant_show_several.php'); 
             }
             else{
                 ?>No restaurants to show<?php
@@ -54,7 +54,7 @@
         <div>
             <?php 
             if (count($reviews) > 0){
-                include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_reviews.php'); 
+                include ('../templates/show_all_reviews.php'); 
             }
             else{
                 ?>No reviews to show<?php
@@ -66,5 +66,5 @@
 
 
 <?php
-    include ($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php');
+    include ('../templates/footer.php');
 ?>

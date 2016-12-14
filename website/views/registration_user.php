@@ -1,7 +1,7 @@
 <?php 
 
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/header.php'); 
-    include($_SERVER['DOCUMENT_ROOT'].'/vendors/simple-php-captcha/simple-php-captcha.php');
+    include('../templates/header.php'); 
+    include('../vendors/simple-php-captcha/simple-php-captcha.php');
 
     // Captcha configuration
     $_SESSION['captcha'] = simple_php_captcha(array(
@@ -23,7 +23,7 @@
 <div class="registration" >
     <h1>Register</h1>
 
-    <form class ="edit_user_info" enctype="multipart/form-data" action="/actions/add_user.php" method="post">
+    <form class ="edit_user_info" enctype="multipart/form-data" action="../actions/add_user.php" method="post">
 
         <label>Username</label>
         <input name="username" type="text" autocomplete="off" required>
@@ -56,6 +56,6 @@
     </form>
 </div>
 
-<script src="/resources/js/verify_password_size.js"> </script>
+<script src="../resources/js/verify_password_size.js"> </script>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>

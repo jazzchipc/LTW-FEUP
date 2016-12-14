@@ -16,8 +16,8 @@
 //
 // http://stackoverflow.com/questions/595358/how-can-i-execute-a-php-function-in-a-form-action
 
-include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
-include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
+include_once('connection.php');
+include_once('user.php');
 
 function addReview($dbh, $title, $score, $post, $restaurant_id, $reviewer_id)
 {
