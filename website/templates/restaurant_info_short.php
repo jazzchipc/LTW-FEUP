@@ -13,18 +13,16 @@
     </div>
 
     <div class="restaurant_name">
-        <label><h3>Name</h3><label>
-        <h2><?= $restaurant['restaurant_name']; ?></h2>
+        <h1><?= $restaurant['restaurant_name']; ?></h1>
     </div>
 
     <div class="restaurant_description">
-        <label><h3>Description</h3><label>
-        <?= $restaurant['description']; ?>
+        "<?= $restaurant['description']; ?>"
     </div>
 
     <div class="restaurant_evaluation">
         <span class="stars"><?=$restaurant['average_score']?></span>
     </div>
-    <a href="/templates/restaurant_info.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
+    <a href="/views/restaurant_page.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
   
 </div>

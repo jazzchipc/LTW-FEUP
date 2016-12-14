@@ -126,8 +126,14 @@ header #title{
 
 /* Title */
 header h1{
+    font-family: 'Poiret One', cursive;
     font-size: 3rem;
     text-align: center;
+}
+
+h1{
+    font-weight: bold;
+    font-family: 'Poiret One', cursive;
 }
 
 /* Login */
@@ -325,7 +331,6 @@ input[type=submit]:hover{
 textarea {
     padding: 0.5rem;
     margin: 0 1rem 0 0;
-    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     max-width: 100%;
     height: 6rem;
@@ -343,6 +348,39 @@ textarea {
 .spinner_jquery{
     width: 2rem;
 }
+
+/* RESTAURANT PAGE */
+
+.restaurant_info {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right:12.5%;
+    margin-left:12.5%;
+    text-align: center;
+}
+
+.restaurant_info img{
+    width: 100%;
+    height: 100%;
+   
+    margin-bottom:2rem;
+    padding: 5px;
+    box-shadow: inset 0 0 0 5px #fed85d;
+}
+
+.restaurant_info .name{
+    font-weight: bold;
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 3rem;
+    text-align:center;  
+}
+
+.restaurant_info .description{
+    font-style: italic;
+}
+
 
 /* USER PROFILE */
 .user_info {
@@ -450,6 +488,10 @@ section.restaurant_info {
     margin-top: 2rem;
 }
 
+.restaurant_info_short .restaurant_description{
+    font-style: italic;
+}
+
 .restaurant_info_short .restaurant_evaluation{
     margin-left: 36%;
 }
@@ -457,11 +499,14 @@ section.restaurant_info {
 .restaurant_info_short .restaurant_photo{
     float: left;
     margin-right: 3rem;
+    margin-top: 0.1rem;
 }
 
 .restaurant_info_short:last-child {
     border-width: 0px;
 }
+
+
 
 
 
