@@ -18,14 +18,14 @@ html{
 
 
 left-margin{
-    background: url("/resources/img/left-margin.jpg");
+    background: url("../img/left-margin.jpg");
     flex: 1 6 15%;
     order: 1;
     min-height: 100%;
 }
 
 right-margin{
-    background: url("/resources/img/right-margin.jpg");
+    background: url("../img/right-margin.jpg");
     flex: 1 6 15%;
     order: 3;
     min-height: 100%;
@@ -236,7 +236,7 @@ header .menu ul li a{
 
 span.stars, span.stars span {
     display: block;
-    background: url(/resources/img/stars.png) 0 -16px repeat-x;
+    background: url("../img/stars.png") 0 -16px repeat-x;
     width: 80px;
     height: 16px;
     margin: 0;

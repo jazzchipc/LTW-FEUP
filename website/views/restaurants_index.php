@@ -18,7 +18,7 @@ try {
     $restaurants = $stmt->fetchAll();
 
     
-    include($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show_several.php');
+    include('../templates/restaurant_show_several.php');
 
     /*** var_dump vs echo vs print_r ***/
     /* 
@@ -38,7 +38,7 @@ if(isset($_SESSION['authenticated']))
 {
 ?>
 
-<a href="/views/restaurant_add.php">Add restaurant</a>
+<a href="../views/restaurant_add.php">Add restaurant</a>
 
 <?php
 }

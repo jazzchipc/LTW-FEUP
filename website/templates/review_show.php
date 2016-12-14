@@ -9,7 +9,7 @@
 
     $reviewer_id = getReviewer($dbh, $review['review_id']);
 
-    include_once($_SERVER['DOCUMENT_ROOT']."/database/user.php");
+    include_once("../database/user.php");
 
     $reviewer_name = getUserById($dbh, $reviewer_id)['user_name'];
   ?>
@@ -26,7 +26,7 @@
       <br>
       <h6>On: <?=$review['date']?></h6>
       <br>
-      <a href="/show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
+      <a href="../show_replies.php/?review_id=<?=$review['review_id']?>"> <p>Replies</p> </a>
     </div>
   </div>
   <?php } ?>

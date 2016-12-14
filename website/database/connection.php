@@ -1,6 +1,6 @@
 <?php
   try {
-    $dbh = new PDO('sqlite:'.$_SERVER['DOCUMENT_ROOT'].'/database/sqlite/db');
+    $dbh = new PDO('sqlite:../db');
     #OR
     #$dbh = new PDO('sqlite:database/sqlite/db');  # absolute path from webroot. Using '/' does not work, so no need for that.
     #OR

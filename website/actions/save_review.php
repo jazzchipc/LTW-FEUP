@@ -3,8 +3,8 @@
     //if (!isset($_POST['id'])) die('No id');
     if (!isset($_POST['title']) || trim($_POST['title']) == '') die('Title is mandatory');
 
-    include($_SERVER['DOCUMENT_ROOT']."/database/review.php");
-    include($_SERVER['DOCUMENT_ROOT']."/database/connection.php");
+    include("../database/review.php");
+    include("../database/connection.php");
 
     $intScore = intval($_POST['score']);
     $intRestaurantId = intval($_POST['restaurant_id']);
@@ -19,5 +19,5 @@
         die($e->getMessage());
     }
 
-    header('Location: /views/restaurants_index.php');
+    header('Location: ../views/restaurants_index.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
     
-    $target_dir = $_SERVER['DOCUMENT_ROOT'].'/resources/img/uploads/restaurants/';
+    $target_dir = 'resources/img/uploads/restaurants/';
     $restaurant_photo_name =  basename($_FILES["restaurant_photo"]["name"]);
     $target_file = $target_dir . $restaurant_photo_name;
     $uploadOk = 1;

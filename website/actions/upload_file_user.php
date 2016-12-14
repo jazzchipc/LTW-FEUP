@@ -1,6 +1,6 @@
 <?php
     
-    $target_dir = $_SERVER['DOCUMENT_ROOT'].'/resources/img/uploads/users/';
+    $target_dir = 'resources/img/uploads/users/';
     $photo_name =  basename($_FILES["photo"]["name"]);
     $target_file = $target_dir . $photo_name;
     $uploadOk = 1;

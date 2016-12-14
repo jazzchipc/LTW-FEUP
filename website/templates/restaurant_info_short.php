@@ -1,7 +1,7 @@
 <div class="restaurant_info_short">
 
     <!-- Star rating system -->
-    <script src="/resources/js/star-rating.js"></script>
+    <script src="../resources/js/star-rating.js"></script>
     <script>
         $(function() {
         $('span.stars').stars();
@@ -23,6 +23,6 @@
     <div class="restaurant_evaluation">
         <span class="stars"><?=$restaurant['average_score']?></span>
     </div>
-    <a href="/views/restaurant_page.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
+    <a href="../views/restaurant_page.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">See More</a>
   
 </div>

@@ -8,7 +8,7 @@
       $reply['date'] = "2000-01-01 00:00:00.000";
     } 
 
-    include_once($_SERVER['DOCUMENT_ROOT']."/database/user.php");
+    include_once("../database/user.php");
 
     $reviewer_name = getUserById($dbh, $reply['user_id'])['user_name'];
 

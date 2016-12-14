@@ -1,7 +1,7 @@
 <?php
 
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
+    include_once('connection.php');
+    include_once('user.php');
 
     function addRestaurant($dbh, $user_id, $restaurant_name, $restaurant_description, $restaurant_photo, $opening_time, $closing_time)
     {

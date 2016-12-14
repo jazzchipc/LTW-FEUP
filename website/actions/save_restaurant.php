@@ -1,7 +1,7 @@
 <?php
 
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/restaurant.php');
+    include_once('../database/connection.php');
+    include_once('../database/restaurant.php');
 
     $userId = $_POST['user_id'];
     
@@ -21,8 +21,8 @@
     $opening_time = $_POST['open_hours'] . ':' . $open_minutes;
     $closing_time = $_POST['close_hours'] . ':' . $close_minutes;
 
-    include_once($_SERVER['DOCUMENT_ROOT'].'/upload_file_restaurant.php');
-    $givenImage = '/resources/img/uploads/restaurants/'. $restaurant_photo_name;
+    include_once('../upload_file_restaurant.php');
+    $givenImage = '../resources/img/uploads/restaurants/'. $restaurant_photo_name;
 
     try
     {
@@ -33,6 +33,6 @@
         die($e->getMessage());
     }
 
-    header("Location: /views/restaurants_index.php");
+    header("Location: ../views/restaurants_index.php");
 
 ?>

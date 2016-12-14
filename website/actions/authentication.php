@@ -1,7 +1,7 @@
 <?php
 
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
-    include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
+    include_once('../database/connection.php');
+    include_once('../database/user.php');
 
     $givenUsername = $_POST['username'];
     $givenPassword = $_POST['password'];
@@ -39,14 +39,14 @@
             $_SESSION['user_id'] = $USER['user_id'];
             $_SESSION['user_name'] = $USER['user_name'];
 
-            echo "<script> window.location.href = \"/index.php\" </script>";
+            echo "<script> window.location.href = \"../index.php\" </script>";
         }
         else
         {
         ?>
             <script> 
                 alert("Invalid username or password!");
-                window.location.href = "/views/login.php";
+                window.location.href = "../views/login.php";
             </script>
         <?php
         }
