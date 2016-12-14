@@ -4,7 +4,7 @@
 
     <form action="../views/user_account.php" method="post">
 
-        <img src="<?= $user['photo_url'] ?>" alt="Profile Photo" width=200 height=200>
+        <img src="..<?= $user['photo_url'] ?>" alt="Profile Photo" width=200 height=200>
 
         <div class="user_name">
             <label><?= $user['first_name']?></label>

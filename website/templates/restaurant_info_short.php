@@ -3,7 +3,7 @@
     <!-- Star rating system -->
 
     <div class="restaurant_photo">
-        <img class="photo" src="<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=200 height=200>
+        <img class="photo" src="..<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=200 height=200>
     </div>
 
     <div class="restaurant_name">

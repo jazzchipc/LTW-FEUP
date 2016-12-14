@@ -16,7 +16,7 @@ include('../templates/reply_show.php');
 
 ?>
     <br>
-    <a href="../write_reply.php/?review_id=<?=$_GET['review_id']?>"> <p>Reply</p> </a>
+    <a href="../views/write_reply.php?review_id=<?=$_GET['review_id']?>"> <p>Reply</p> </a>
 
 <?php
 

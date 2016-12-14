@@ -15,7 +15,7 @@
             <label><?= $restaurant['restaurant_name']?></label>     
         </div>
         
-         <img src="<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=400 height=400>
+         <img src="..<?= $restaurant['photo_url'] ?>" alt="Restaurant Photo" width=400 height=400>
 
         <div class="description">
             <label>"<?= $restaurant['description']?>"</label>
