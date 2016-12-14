@@ -22,7 +22,7 @@
     $closing_time = $_POST['close_hours'] . ':' . $close_minutes;
 
     include_once('upload_file_restaurant.php');
-    $givenImage = '../resources/img/uploads/restaurants/'. $restaurant_photo_name;
+    $givenImage = '/resources/img/uploads/restaurants/'. $restaurant_photo_name;
 
     try
     {

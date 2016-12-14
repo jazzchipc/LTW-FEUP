@@ -20,11 +20,11 @@
     include_once('../database/user.php');
 
     if ($_FILES['photo']['size'] != 0){
-        include_once('../upload_file_user.php');
-        $photo = '../resources/img/uploads/users/'. $photo_name;
+        include_once('upload_file_user.php');
+        $photo = '/resources/img/uploads/users/'. $photo_name;
     }
     else{
-        $photo = '../resources/img/uploads/users/user.png';
+        $photo = '/resources/img/uploads/users/user.png';
     }
 
     
@@ -75,7 +75,7 @@
         }
         ?>
         <!-- TO LOGIN AFTER REGISTER -->
-         <form id ="user_form" action="/actions/authentication.php" method="post">
+         <form id ="user_form" action="authentication.php" method="post">
 
             <input name="username" type="hidden" value="<?= $username?>">
   
