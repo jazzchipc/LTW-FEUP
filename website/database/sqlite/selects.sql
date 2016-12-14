@@ -3,6 +3,7 @@
 .mode columns
 .headers on
 .nullvalue NULL
+.width 150
 PRAGMA foreign_keys = ON;
 
 
@@ -36,5 +37,7 @@ ON Restaurant_Owners.owner_id = Owner.owner_id
 WHERE Restaurant_Owners.restaurant_id=3;
 
 
-SELECT *
-FROM Restaurant_Owners;
+SELECT Restaurant.photo_url
+FROM Restaurant;
+
+
