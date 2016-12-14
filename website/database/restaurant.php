@@ -3,10 +3,11 @@
     include_once($_SERVER['DOCUMENT_ROOT']. '/database/connection.php');
     include_once($_SERVER['DOCUMENT_ROOT']. '/database/user.php');
 
-    function addRestaurant($dbh, $user_id, $restaurant_name, $restaurant_description, $restaurant_photo)
+    function addRestaurant($dbh, $user_id, $restaurant_name, $restaurant_description, $restaurant_photo, $opening_time, $closing_time)
     {
-        $stmt = $dbh->prepare('INSERT INTO Restaurant (restaurant_name, description, photo_url) VALUES (?, ?, ?)');
-        $stmt->execute(array($restaurant_name, $restaurant_description, $restaurant_photo));
+        $stmt = $dbh->prepare('INSERT INTO Restaurant (restaurant_name, description, photo_url, opening_time, closing_time) 
+                               VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($restaurant_name, $restaurant_description, $restaurant_photo, $opening_time, $closing_time));
 
         $restaurant_id = intval($dbh->lastInsertId()); 
 
@@ -34,7 +35,7 @@
 
 
     function getRestaurantsByOwner($dbh, $user_name){
-        $stmt = $dbh->prepare('SELECT *
+        $stmt = $dbh->prepare('SELECT Restaurant.restaurant_id, Restaurant.restaurant_name, Restaurant.description, Restaurant.photo_url, Restaurant.opening_time, Restaurant.closing_time, Restaurant.average_score
                                FROM Restaurant
                                INNER JOIN Restaurant_Owners
                                ON Restaurant_Owners.restaurant_id = Restaurant.restaurant_id
