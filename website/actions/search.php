@@ -43,7 +43,7 @@
 
         $restaurants = getRestaurantsByName($dbh, $toSearch);
         if (count($restaurants) > 0){
-            include ('../templates/show_all_restaurants.php');
+            include ('../templates/restaurant_show_several.php');
         }
 
     }
