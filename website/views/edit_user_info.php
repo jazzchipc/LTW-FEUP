@@ -12,7 +12,7 @@
 
 <div class="edit_user_info">
 
-    <h2> My Information </h2>
+    <h1> My Information </h1>
     <form enctype="multipart/form-data" action="/actions/edit_user.php" method="post">
 
         <div id="fill">

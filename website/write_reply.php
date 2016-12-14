@@ -9,7 +9,7 @@
 
     <!-- Using hidden inputs to send more information on the $_POST variable than what is in the form. -->
     <input type="hidden" name="review_id" value="<?php echo $_GET['review_id']?>" />
-    <input type="hidden" name="user_id" value="1" />
+    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>" />
     <input type="hidden" name="parent_id" value="0" />
 
     <div id="reply">

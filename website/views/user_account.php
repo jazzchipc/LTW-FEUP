@@ -43,7 +43,7 @@
         <div>
             <?php
             if (count($restaurants) > 0){
-                include ($_SERVER['DOCUMENT_ROOT'].'/templates/show_all_restaurants.php'); 
+                include ($_SERVER['DOCUMENT_ROOT'].'/templates/restaurant_show_several.php'); 
             }
             else{
                 ?>No restaurants to show<?php

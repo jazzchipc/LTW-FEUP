@@ -1,4 +1,12 @@
 
+    <!-- Star rating system -->
+<script src="/resources/js/star-rating.js"></script>
+<script>
+        $(function() {
+        $('span.stars').stars();
+        });
+</script>
+
 <div class="restaurant_info">
 
     <form action="/views/edit_restaurant_info.php" method="post">
@@ -16,8 +24,20 @@
             <label>Open Time: <?= $restaurant['opening_time']?> - <?= $restaurant['closing_time']?></label>
         </div>
         
-        <div class="time">
-            <label><?= $restaurant['average_score']?></label>
+        <div class="stars">
+            <?php if(!isset($restaurant['average_score']))
+            {
+            ?>
+                <h3>No reviews yet</h3>
+            <?php
+            }
+            else
+            {
+            ?>
+                <span class="stars"><?=$restaurant['average_score']?></span>
+            <?php
+            }
+            ?>
         </div>
 
         <a href="/views/restaurant_reviews.php/?restaurant_id=<?=$restaurant['restaurant_id']?>">Show Reviews</a>

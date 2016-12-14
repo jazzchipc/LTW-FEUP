@@ -26,9 +26,9 @@
     ?>
 
     <div class="Login" >
-        <h2>Login</h2>
+        <h1>Login</h1>
 
-        <form class ="user_form" action="/actions/authentication.php" method="post">
+        <form class ="edit_user_info" action="/actions/authentication.php" method="post">
 
             <div><label>Username/email</label>
             <input name="username" type="text" value="<?= $suggestedUserName?>" required></div>
